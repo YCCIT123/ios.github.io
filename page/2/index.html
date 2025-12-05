@@ -50,6 +50,62 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
@@ -194,125 +250,60 @@
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
     
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/ios.github.io/2025/12/03/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">swift学习日记(一)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2025-12-03
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2025-12-04
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
 
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="page-describe">
-        目前共计 11 篇日志。
-    </div>
-    <div class="posts-collapse">
-        
-            
-            
-                <div class="collection-title">
-                    <a href="/ios.github.io/archives/2025"><h2>2025<small>归档</small></h2></a>
-                </div>
-                
-            
 
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/16/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%8D%81%EF%BC%89/">swift学习日记(十)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-16 >
-                    2025.12.16
-                </time>
-            </div>
-        
-            
-            
 
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/14/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/">swift学习日记(九)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-14 >
-                    2025.12.14
-                </time>
-            </div>
-        
-            
-            
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /ios.github.io/tags/swift/ >swift</a>
+      </i>
+    
+  </div>
 
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/">swift学习日记(八)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-12 >
-                    2025.12.12
-                </time>
-            </div>
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h1 id="Swift学习日记（一）：Swift语言概述与基础语法"><a href="#Swift学习日记（一）：Swift语言概述与基础语法" class="headerlink" title="Swift学习日记（一）：Swift语言概述与基础语法"></a>Swift学习日记（一）：Swift语言概述与基础语法</h1><h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>Swift是苹果公司于2014年WWDC上发布的现代编程语言，用于开发iOS、macOS、watchOS...
+          
+        </div>
         
-            
-            
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/ios.github.io/2025/12/03/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">阅读更多</a>
+        </div>
+      </div>
+    </article>
 
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/10/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/">swift学习日记(七)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-10 >
-                    2025.12.10
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/08/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/">swift学习日记(六)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-08 >
-                    2025.12.08
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/07/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/">swift学习日记(五)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-07 >
-                    2025.12.07
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/06/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">swift学习日记(四)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-06 >
-                    2025.12.06
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/05/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">swift学习日记(三)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-05 >
-                    2025.12.05
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">swift学习日记(二)</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-04 >
-                    2025.12.04
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/ios.github.io/2025/12/04/WeatheKit%20%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">WeatherKit 使用文档</a></h3>
-                <time itemprop="dateCreated" datetime=2025-12-04 >
-                    2025.12.04
-                </time>
-            </div>
-        
-    </div>
-</div>
 
 
   <nav style="text-align: center;">
     <div class="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/ios.github.io/archives/2025/page/2/">2</a><a class="extend next" rel="next" href="/ios.github.io/archives/2025/page/2/"><i class="iconfont icon-angle-right"></i></a>
+      <a class="extend prev" rel="prev" href="/ios.github.io/"><i class="iconfont icon-angle-left"></i></a><a class="page-number" href="/ios.github.io/">1</a><span class="page-number current">2</span>
     </div>
   </nav>
 

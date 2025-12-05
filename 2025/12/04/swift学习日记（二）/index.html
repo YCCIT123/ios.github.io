@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/ios.github.io/./././images/userImage.JPG">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/ios.github.io/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/ios.github.io/css/main.css">
+<link rel="stylesheet" href="/ios.github.io/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            swift学习日记(二) | 猪会飞的博客
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/ios.github.io/" class="mdui-typo-headline">猪会飞的博客</a>
+    <a href="/ios.github.io/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/ios.github.io/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/ios.github.io/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/ios.github.io/./././images/userImage.JPG"/>
+                
+            </div>
+            <div class="sidebar-author-name">猪会飞</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:2839029331@qq.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/YCCIT123" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">swift学习日记(二)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2025-12-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2025-12-04
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=swift学习日记(二)&url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/&pic=https://yccit123.github.io/ios.github.io/ios.github.io/./././images/userImage.JPG&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=swift学习日记(二)&url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/&via=猪会飞" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/&title=swift学习日记(二)" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=猪会飞的博客&title=swift学习日记(二)&summary=&pics=https://yccit123.github.io/ios.github.io/ios.github.io/./././images/userImage.JPG&url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://yccit123.github.io/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/&text=swift学习日记(二)" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /ios.github.io/tags/swift/ >swift</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Swift学习日记（二）：数据类型与运算符"><a href="#Swift学习日记（二）：数据类型与运算符" class="headerlink" title="Swift学习日记（二）：数据类型与运算符"></a>Swift学习日记（二）：数据类型与运算符</h1><h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>在上一篇学习日记中，我们初步了解了Swift的基本语法、变量与常量的声明方式以及一些简单的数据类型。在这篇日记中，我们将深入探讨Swift的数据类型系统和运算符，这些是Swift编程的基础构建块。</p>
+<h2 id="二、数据类型详解"><a href="#二、数据类型详解" class="headerlink" title="二、数据类型详解"></a>二、数据类型详解</h2><h3 id="1-数值类型"><a href="#1-数值类型" class="headerlink" title="1. 数值类型"></a>1. 数值类型</h3><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p>Swift提供了不同位数的整数类型，以满足不同的存储需求：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有符号整数</span></span><br><span class="line"><span class="keyword">var</span> int8: <span class="type">Int8</span> <span class="operator">=</span> <span class="number">127</span> <span class="comment">// 8位有符号整数，范围：-128到127</span></span><br><span class="line"><span class="keyword">var</span> int16: <span class="type">Int16</span> <span class="operator">=</span> <span class="number">32767</span> <span class="comment">// 16位有符号整数，范围：-32768到32767</span></span><br><span class="line"><span class="keyword">var</span> int32: <span class="type">Int32</span> <span class="operator">=</span> <span class="number">2147483647</span> <span class="comment">// 32位有符号整数，范围：-2147483648到2147483647</span></span><br><span class="line"><span class="keyword">var</span> int64: <span class="type">Int64</span> <span class="operator">=</span> <span class="number">9223372036854775807</span> <span class="comment">// 64位有符号整数，范围：-9223372036854775808到9223372036854775807</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 无符号整数</span></span><br><span class="line"><span class="keyword">var</span> uint8: <span class="type">UInt8</span> <span class="operator">=</span> <span class="number">255</span> <span class="comment">// 8位无符号整数，范围：0到255</span></span><br><span class="line"><span class="keyword">var</span> uint16: <span class="type">UInt16</span> <span class="operator">=</span> <span class="number">65535</span> <span class="comment">// 16位无符号整数，范围：0到65535</span></span><br><span class="line"><span class="keyword">var</span> uint32: <span class="type">UInt32</span> <span class="operator">=</span> <span class="number">4294967295</span> <span class="comment">// 32位无符号整数，范围：0到4294967295</span></span><br><span class="line"><span class="keyword">var</span> uint64: <span class="type">UInt64</span> <span class="operator">=</span> <span class="number">18446744073709551615</span> <span class="comment">// 64位无符号整数，范围：0到18446744073709551615</span></span><br></pre></td></tr></table></figure>
+
+<p>在实际开发中，我们通常使用<code>Int</code>类型，它会根据平台自动适配为32位或64位：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count: <span class="type">Int</span> <span class="operator">=</span> <span class="number">100</span> <span class="comment">// 在32位平台上为Int32，在64位平台上为Int64</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><p>Swift提供了两种浮点类型：<code>Float</code>和<code>Double</code>。<code>Double</code>的精度更高，通常优先使用：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatValue: <span class="type">Float</span> <span class="operator">=</span> <span class="number">3.14159</span> <span class="comment">// 单精度浮点数，精度约为6位小数</span></span><br><span class="line"><span class="keyword">var</span> doubleValue: <span class="type">Double</span> <span class="operator">=</span> <span class="number">3.141592653589793</span> <span class="comment">// 双精度浮点数，精度约为15位小数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数值字面量</span></span><br><span class="line"><span class="keyword">let</span> decimal <span class="operator">=</span> <span class="number">123.45</span> <span class="comment">// 十进制浮点数</span></span><br><span class="line"><span class="keyword">let</span> hexadecimal <span class="operator">=</span> <span class="number">0x1F.3E</span> <span class="comment">// 十六进制浮点数</span></span><br><span class="line"><span class="keyword">let</span> exponent <span class="operator">=</span> <span class="number">1.23e-4</span> <span class="comment">// 科学计数法，相当于0.000123</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-布尔类型"><a href="#2-布尔类型" class="headerlink" title="2. 布尔类型"></a>2. 布尔类型</h3><p>布尔类型<code>Bool</code>只有两个值：<code>true</code>和<code>false</code>，用于表示逻辑值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isActive: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">var</span> isEmpty: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 布尔值常用于条件判断</span></span><br><span class="line"><span class="keyword">if</span> isActive &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;系统已激活&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;系统未激活&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-字符串类型"><a href="#3-字符串类型" class="headerlink" title="3. 字符串类型"></a>3. 字符串类型</h3><p>String类型用于表示字符序列，在Swift中是值类型，具有良好的性能和安全性：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串创建</span></span><br><span class="line"><span class="keyword">let</span> emptyString <span class="operator">=</span> <span class="string">&quot;&quot;</span> <span class="comment">// 空字符串</span></span><br><span class="line"><span class="keyword">let</span> stringWithContent <span class="operator">=</span> <span class="string">&quot;Hello Swift&quot;</span></span><br><span class="line"><span class="keyword">let</span> multiLineString <span class="operator">=</span> <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">这是一个</span></span><br><span class="line"><span class="string">多行字符串</span></span><br><span class="line"><span class="string">示例</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串属性</span></span><br><span class="line"><span class="keyword">let</span> length <span class="operator">=</span> stringWithContent.count <span class="comment">// 字符串长度</span></span><br><span class="line"><span class="keyword">let</span> isEmpty <span class="operator">=</span> emptyString.isEmpty <span class="comment">// 检查是否为空</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串操作</span></span><br><span class="line"><span class="keyword">let</span> concatenated <span class="operator">=</span> <span class="string">&quot;Hello&quot;</span> <span class="operator">+</span> <span class="string">&quot; &quot;</span> <span class="operator">+</span> <span class="string">&quot;Swift&quot;</span> <span class="comment">// 字符串拼接</span></span><br><span class="line"><span class="keyword">let</span> interpolated <span class="operator">=</span> <span class="string">&quot;Hello, <span class="subst">\(name)</span>!&quot;</span> <span class="comment">// 字符串插值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串遍历</span></span><br><span class="line"><span class="keyword">for</span> character <span class="keyword">in</span> <span class="string">&quot;Swift&quot;</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(character)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-集合类型"><a href="#4-集合类型" class="headerlink" title="4. 集合类型"></a>4. 集合类型</h3><h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4><p>数组是有序的相同类型元素集合，可以动态添加或删除元素：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组创建</span></span><br><span class="line"><span class="keyword">var</span> numbers: [<span class="type">Int</span>] <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> emptyArray: [<span class="type">String</span>] <span class="operator">=</span> []</span><br><span class="line"><span class="keyword">var</span> repeatedArray <span class="operator">=</span> <span class="type">Array</span>(repeating: <span class="number">0</span>, count: <span class="number">5</span>) <span class="comment">// 创建包含5个0的数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组操作</span></span><br><span class="line">numbers.append(<span class="number">6</span>) <span class="comment">// 添加元素到末尾</span></span><br><span class="line">numbers.insert(<span class="number">0</span>, at: <span class="number">0</span>) <span class="comment">// 在指定位置插入元素</span></span><br><span class="line">numbers.remove(at: <span class="number">0</span>) <span class="comment">// 删除指定位置的元素</span></span><br><span class="line">numbers.removeLast() <span class="comment">// 删除最后一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组访问</span></span><br><span class="line"><span class="keyword">let</span> firstNumber <span class="operator">=</span> numbers[<span class="number">0</span>] <span class="comment">// 访问第一个元素</span></span><br><span class="line"><span class="keyword">let</span> lastNumber <span class="operator">=</span> numbers.last <span class="comment">// 访问最后一个元素（可选类型）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组遍历</span></span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</span><br><span class="line">    <span class="built_in">print</span>(number)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (index, number) <span class="keyword">in</span> numbers.enumerated() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;索引<span class="subst">\(index)</span>：<span class="subst">\(number)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="集合-Set"><a href="#集合-Set" class="headerlink" title="集合(Set)"></a>集合(Set)</h4><p>集合是无序的唯一类型元素集合，适合需要快速查找和唯一性的场景：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 集合创建</span></span><br><span class="line"><span class="keyword">var</span> colors: <span class="type">Set</span>&lt;<span class="type">String</span>&gt; <span class="operator">=</span> [<span class="string">&quot;红&quot;</span>, <span class="string">&quot;绿&quot;</span>, <span class="string">&quot;蓝&quot;</span>]</span><br><span class="line"><span class="keyword">var</span> emptySet: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> []</span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合操作</span></span><br><span class="line">colors.insert(<span class="string">&quot;黄&quot;</span>) <span class="comment">// 添加元素</span></span><br><span class="line">colors.remove(<span class="string">&quot;红&quot;</span>) <span class="comment">// 删除元素</span></span><br><span class="line"><span class="keyword">let</span> containsGreen <span class="operator">=</span> colors.contains(<span class="string">&quot;绿&quot;</span>) <span class="comment">// 检查是否包含元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合遍历</span></span><br><span class="line"><span class="keyword">for</span> color <span class="keyword">in</span> colors &#123;</span><br><span class="line">    <span class="built_in">print</span>(color)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合运算</span></span><br><span class="line"><span class="keyword">let</span> setA: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> setB: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> intersection <span class="operator">=</span> setA.intersection(setB) <span class="comment">// 交集：[3, 4]</span></span><br><span class="line"><span class="keyword">let</span> union <span class="operator">=</span> setA.union(setB) <span class="comment">// 并集：[1, 2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="keyword">let</span> symmetricDifference <span class="operator">=</span> setA.symmetricDifference(setB) <span class="comment">// 对称差集：[1, 2, 5, 6]</span></span><br><span class="line"><span class="keyword">let</span> subtracting <span class="operator">=</span> setA.subtracting(setB) <span class="comment">// 差集：[1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字典-Dictionary"><a href="#字典-Dictionary" class="headerlink" title="字典(Dictionary)"></a>字典(Dictionary)</h4><p>字典是键值对集合，键必须唯一，值可以重复：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字典创建</span></span><br><span class="line"><span class="keyword">var</span> person: [<span class="type">String</span>: <span class="keyword">Any</span>] <span class="operator">=</span> [<span class="string">&quot;name&quot;</span>: <span class="string">&quot;张三&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">25</span>, <span class="string">&quot;isStudent&quot;</span>: <span class="literal">true</span>]</span><br><span class="line"><span class="keyword">var</span> emptyDictionary: [<span class="type">String</span>: <span class="type">Int</span>] <span class="operator">=</span> [:]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字典操作</span></span><br><span class="line">person[<span class="string">&quot;gender&quot;</span>] <span class="operator">=</span> <span class="string">&quot;男&quot;</span> <span class="comment">// 添加或修改键值对</span></span><br><span class="line">person.removeValue(forKey: <span class="string">&quot;isStudent&quot;</span>) <span class="comment">// 删除键值对</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字典访问</span></span><br><span class="line"><span class="keyword">let</span> name <span class="operator">=</span> person[<span class="string">&quot;name&quot;</span>] <span class="keyword">as?</span> <span class="type">String</span> <span class="comment">// 安全访问，返回可选类型</span></span><br><span class="line"><span class="keyword">let</span> age <span class="operator">=</span> person[<span class="string">&quot;age&quot;</span>] <span class="keyword">as?</span> <span class="type">Int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字典遍历</span></span><br><span class="line"><span class="keyword">for</span> (key, value) <span class="keyword">in</span> person &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(key)</span>：<span class="subst">\(value)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> person.keys &#123;</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> person.values &#123;</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-元组类型"><a href="#5-元组类型" class="headerlink" title="5. 元组类型"></a>5. 元组类型</h3><p>元组用于将多个不同类型的值组合成一个复合值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 元组创建</span></span><br><span class="line"><span class="keyword">let</span> personInfo <span class="operator">=</span> (<span class="string">&quot;张三&quot;</span>, <span class="number">25</span>, <span class="string">&quot;男&quot;</span>)</span><br><span class="line"><span class="keyword">let</span> namedPerson <span class="operator">=</span> (name: <span class="string">&quot;张三&quot;</span>, age: <span class="number">25</span>, gender: <span class="string">&quot;男&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元组访问</span></span><br><span class="line"><span class="keyword">let</span> name <span class="operator">=</span> personInfo.<span class="number">0</span> <span class="comment">// 通过索引访问</span></span><br><span class="line"><span class="keyword">let</span> age <span class="operator">=</span> personInfo.<span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> gender <span class="operator">=</span> personInfo.<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> namedName <span class="operator">=</span> namedPerson.name <span class="comment">// 通过名称访问</span></span><br><span class="line"><span class="keyword">let</span> namedAge <span class="operator">=</span> namedPerson.age</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元组分解</span></span><br><span class="line"><span class="keyword">let</span> (personName, personAge, personGender) <span class="operator">=</span> personInfo</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;姓名：<span class="subst">\(personName)</span>，年龄：<span class="subst">\(personAge)</span>，性别：<span class="subst">\(personGender)</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 忽略元组中的某个值</span></span><br><span class="line"><span class="keyword">let</span> (justName, <span class="keyword">_</span>, justGender) <span class="operator">=</span> personInfo</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-可选类型"><a href="#6-可选类型" class="headerlink" title="6. 可选类型"></a>6. 可选类型</h3><p>可选类型是Swift的一个重要特性，用于表示一个值可能存在或不存在：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可选类型声明</span></span><br><span class="line"><span class="keyword">var</span> optionalName: <span class="type">String</span>? <span class="operator">=</span> <span class="string">&quot;张三&quot;</span></span><br><span class="line"><span class="keyword">var</span> optionalAge: <span class="type">Int</span>? <span class="operator">=</span> <span class="literal">nil</span> <span class="comment">// 明确表示没有值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可选类型解包</span></span><br><span class="line"><span class="comment">// 1. 强制解包（危险，只有确定有值时才使用）</span></span><br><span class="line"><span class="keyword">let</span> name <span class="operator">=</span> optionalName<span class="operator">!</span> <span class="comment">// 如果optionalName为nil，会导致运行时错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 可选绑定（安全，推荐使用）</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> unwrappedName <span class="operator">=</span> optionalName &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;姓名：<span class="subst">\(unwrappedName)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;姓名未知&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 空合并运算符（??）</span></span><br><span class="line"><span class="keyword">let</span> displayName <span class="operator">=</span> optionalName <span class="operator">??</span> <span class="string">&quot;未知用户&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 可选链</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> address: <span class="type">Address</span>?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Address</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> city: <span class="type">String</span></span><br><span class="line">    <span class="keyword">init</span>(<span class="params">city</span>: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.city <span class="operator">=</span> city</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person <span class="operator">=</span> <span class="type">Person</span>()</span><br><span class="line"><span class="keyword">let</span> city <span class="operator">=</span> person.address<span class="operator">?</span>.city <span class="comment">// 如果address为nil，整个表达式返回nil</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、运算符详解"><a href="#三、运算符详解" class="headerlink" title="三、运算符详解"></a>三、运算符详解</h2><h3 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="1. 算术运算符"></a>1. 算术运算符</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本算术运算符</span></span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> <span class="number">10</span> <span class="operator">+</span> <span class="number">5</span> <span class="comment">// 加法</span></span><br><span class="line"><span class="keyword">let</span> difference <span class="operator">=</span> <span class="number">10</span> <span class="operator">-</span> <span class="number">5</span> <span class="comment">// 减法</span></span><br><span class="line"><span class="keyword">let</span> product <span class="operator">=</span> <span class="number">10</span> <span class="operator">*</span> <span class="number">5</span> <span class="comment">// 乘法</span></span><br><span class="line"><span class="keyword">let</span> quotient <span class="operator">=</span> <span class="number">10</span> <span class="operator">/</span> <span class="number">5</span> <span class="comment">// 除法</span></span><br><span class="line"><span class="keyword">let</span> remainder <span class="operator">=</span> <span class="number">10</span> <span class="operator">%</span> <span class="number">3</span> <span class="comment">// 取余</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 复合赋值运算符</span></span><br><span class="line"><span class="keyword">var</span> value <span class="operator">=</span> <span class="number">10</span></span><br><span class="line">value <span class="operator">+=</span> <span class="number">5</span> <span class="comment">// 等价于 value = value + 5</span></span><br><span class="line">value <span class="operator">-=</span> <span class="number">3</span> <span class="comment">// 等价于 value = value - 3</span></span><br><span class="line">value <span class="operator">*=</span> <span class="number">2</span> <span class="comment">// 等价于 value = value * 2</span></span><br><span class="line">value <span class="regexp">/= 4 /</span><span class="operator">/</span> 等价于 value <span class="operator">=</span> value <span class="operator">/</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一元运算符</span></span><br><span class="line"><span class="keyword">let</span> positive <span class="operator">=</span> <span class="operator">+</span><span class="number">5</span></span><br><span class="line"><span class="keyword">let</span> negative <span class="operator">=</span> <span class="operator">-</span><span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> count <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">count <span class="operator">+=</span> <span class="number">1</span> <span class="comment">// 递增</span></span><br><span class="line">count <span class="operator">-=</span> <span class="number">1</span> <span class="comment">// 递减</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-比较运算符"><a href="#2-比较运算符" class="headerlink" title="2. 比较运算符"></a>2. 比较运算符</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a <span class="operator">=</span> <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> b <span class="operator">=</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> isEqual <span class="operator">=</span> a <span class="operator">==</span> b <span class="comment">// 等于</span></span><br><span class="line"><span class="keyword">let</span> isNotEqual <span class="operator">=</span> a <span class="operator">!=</span> b <span class="comment">// 不等于</span></span><br><span class="line"><span class="keyword">let</span> isGreater <span class="operator">=</span> a <span class="operator">&gt;</span> b <span class="comment">// 大于</span></span><br><span class="line"><span class="keyword">let</span> isLess <span class="operator">=</span> a <span class="operator">&lt;</span> b <span class="comment">// 小于</span></span><br><span class="line"><span class="keyword">let</span> isGreaterOrEqual <span class="operator">=</span> a <span class="operator">&gt;=</span> b <span class="comment">// 大于等于</span></span><br><span class="line"><span class="keyword">let</span> isLessOrEqual <span class="operator">=</span> a <span class="operator">&lt;=</span> b <span class="comment">// 小于等于</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较运算符返回布尔值，常用于条件判断</span></span><br><span class="line"><span class="keyword">if</span> a <span class="operator">&gt;</span> b &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a大于b&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-逻辑运算符"><a href="#3-逻辑运算符" class="headerlink" title="3. 逻辑运算符"></a>3. 逻辑运算符</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isTrue <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">let</span> isFalse <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> andResult <span class="operator">=</span> isTrue <span class="operator">&amp;&amp;</span> isFalse <span class="comment">// 逻辑与，只有都为true时才返回true</span></span><br><span class="line"><span class="keyword">let</span> orResult <span class="operator">=</span> isTrue <span class="operator">||</span> isFalse <span class="comment">// 逻辑或，只要有一个为true就返回true</span></span><br><span class="line"><span class="keyword">let</span> notResult <span class="operator">=</span> <span class="operator">!</span>isTrue <span class="comment">// 逻辑非，取反</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 逻辑运算符短路特性</span></span><br><span class="line"><span class="keyword">if</span> isFalse <span class="operator">&amp;&amp;</span> someExpensiveOperation() &#123;</span><br><span class="line">    <span class="comment">// someExpensiveOperation()不会执行，因为isFalse已经是false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> isTrue <span class="operator">||</span> someExpensiveOperation() &#123;</span><br><span class="line">    <span class="comment">// someExpensiveOperation()不会执行，因为isTrue已经是true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-位运算符"><a href="#4-位运算符" class="headerlink" title="4. 位运算符"></a>4. 位运算符</h3><p>位运算符用于操作二进制位：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a: <span class="type">UInt8</span> <span class="operator">=</span> <span class="number">0b1010</span> <span class="comment">// 10</span></span><br><span class="line"><span class="keyword">let</span> b: <span class="type">UInt8</span> <span class="operator">=</span> <span class="number">0b1100</span> <span class="comment">// 12</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 位与</span></span><br><span class="line"><span class="keyword">let</span> andResult <span class="operator">=</span> a <span class="operator">&amp;</span> b <span class="comment">// 0b1000 (8)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 位或</span></span><br><span class="line"><span class="keyword">let</span> orResult <span class="operator">=</span> a <span class="operator">|</span> b <span class="comment">// 0b1110 (14)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 位异或</span></span><br><span class="line"><span class="keyword">let</span> xorResult <span class="operator">=</span> a <span class="operator">^</span> b <span class="comment">// 0b0110 (6)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 位非</span></span><br><span class="line"><span class="keyword">let</span> notResult <span class="operator">=</span> <span class="operator">~</span>a <span class="comment">// 0b0101 (5)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 左移</span></span><br><span class="line"><span class="keyword">let</span> leftShift <span class="operator">=</span> a <span class="operator">&lt;&lt;</span> <span class="number">1</span> <span class="comment">// 0b10100 (20)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 右移</span></span><br><span class="line"><span class="keyword">let</span> rightShift <span class="operator">=</span> a <span class="operator">&gt;&gt;</span> <span class="number">1</span> <span class="comment">// 0b101 (5)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-范围运算符"><a href="#5-范围运算符" class="headerlink" title="5. 范围运算符"></a>5. 范围运算符</h3><p>范围运算符用于表示值的范围：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 闭区间运算符（包含上下界）</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span><span class="operator">...</span><span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i) <span class="comment">// 输出：1, 2, 3, 4, 5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 半开区间运算符（包含下界，不包含上界）</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span><span class="operator">..&lt;</span><span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i) <span class="comment">// 输出：1, 2, 3, 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单侧区间</span></span><br><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> firstThree <span class="operator">=</span> numbers[<span class="number">0</span><span class="operator">...</span><span class="number">2</span>] <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="keyword">let</span> fromSecond <span class="operator">=</span> numbers[<span class="number">1</span><span class="operator">...</span>]</span><br><span class="line"><span class="keyword">let</span> upToThird <span class="operator">=</span> numbers[<span class="operator">..&lt;</span><span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、类型转换"><a href="#四、类型转换" class="headerlink" title="四、类型转换"></a>四、类型转换</h2><h3 id="1-数值类型转换"><a href="#1-数值类型转换" class="headerlink" title="1. 数值类型转换"></a>1. 数值类型转换</h3><p>Swift是类型安全语言，不同数值类型之间的转换需要显式进行：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> intValue: <span class="type">Int</span> <span class="operator">=</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">let</span> doubleValue: <span class="type">Double</span> <span class="operator">=</span> <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 整数转浮点数</span></span><br><span class="line"><span class="keyword">let</span> intToDouble <span class="operator">=</span> <span class="type">Double</span>(intValue) <span class="comment">// 100.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 浮点数转整数（会截断小数部分）</span></span><br><span class="line"><span class="keyword">let</span> doubleToInt <span class="operator">=</span> <span class="type">Int</span>(doubleValue) <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不同整数类型之间转换</span></span><br><span class="line"><span class="keyword">let</span> int8Value: <span class="type">Int8</span> <span class="operator">=</span> <span class="number">127</span></span><br><span class="line"><span class="keyword">let</span> int16Value <span class="operator">=</span> <span class="type">Int16</span>(int8Value)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-字符串与数值之间的转换"><a href="#2-字符串与数值之间的转换" class="headerlink" title="2. 字符串与数值之间的转换"></a>2. 字符串与数值之间的转换</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数值转字符串</span></span><br><span class="line"><span class="keyword">let</span> number <span class="operator">=</span> <span class="number">123</span></span><br><span class="line"><span class="keyword">let</span> numberString <span class="operator">=</span> <span class="type">String</span>(number)</span><br><span class="line"><span class="keyword">let</span> decimalString <span class="operator">=</span> <span class="type">String</span>(<span class="number">123.45</span>)</span><br><span class="line"><span class="keyword">let</span> hexString <span class="operator">=</span> <span class="type">String</span>(<span class="number">255</span>, radix: <span class="number">16</span>) <span class="comment">// 十六进制字符串：&quot;ff&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串转数值</span></span><br><span class="line"><span class="keyword">let</span> stringToInt <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;123&quot;</span>) <span class="comment">// Optional(123)</span></span><br><span class="line"><span class="keyword">let</span> stringToDouble <span class="operator">=</span> <span class="type">Double</span>(<span class="string">&quot;123.45&quot;</span>) <span class="comment">// Optional(123.45)</span></span><br><span class="line"><span class="keyword">let</span> invalidString <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;abc&quot;</span>) <span class="comment">// nil</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用可选绑定安全转换</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> value <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;123&quot;</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;转换成功：<span class="subst">\(value)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;转换失败&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、内容机制与知识点总结"><a href="#五、内容机制与知识点总结" class="headerlink" title="五、内容机制与知识点总结"></a>五、内容机制与知识点总结</h2><h3 id="1-内容机制"><a href="#1-内容机制" class="headerlink" title="1. 内容机制"></a>1. 内容机制</h3><p>Swift的数据类型系统和运算符设计遵循以下核心原则：</p>
+<ul>
+<li><strong>类型安全</strong>：在编译时检查类型，避免运行时错误</li>
+<li><strong>值语义</strong>：大多数数据类型（如String、Array、Dictionary）都是值类型，赋值和传递时会创建副本</li>
+<li><strong>一致性</strong>：运算符行为在不同类型之间保持一致</li>
+<li><strong>表达性</strong>：提供丰富的类型和运算符，允许开发者用简洁的代码表达复杂的逻辑</li>
+</ul>
+<h3 id="2-知识点总结"><a href="#2-知识点总结" class="headerlink" title="2. 知识点总结"></a>2. 知识点总结</h3><table>
+<thead>
+<tr>
+<th>主题</th>
+<th>核心知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数值类型</td>
+<td>Int、Int8&#x2F;16&#x2F;32&#x2F;64、UInt、UInt8&#x2F;16&#x2F;32&#x2F;64、Float、Double</td>
+</tr>
+<tr>
+<td>布尔类型</td>
+<td>Bool、true&#x2F;false值</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>字符串创建、属性、操作、遍历</td>
+</tr>
+<tr>
+<td>集合类型</td>
+<td>Array（有序可重复）、Set（无序唯一）、Dictionary（键值对）</td>
+</tr>
+<tr>
+<td>元组类型</td>
+<td>复合值、索引访问、命名访问、分解</td>
+</tr>
+<tr>
+<td>可选类型</td>
+<td>声明、强制解包、可选绑定、空合并运算符、可选链</td>
+</tr>
+<tr>
+<td>算术运算符</td>
+<td>+、-、*、&#x2F;、%、复合赋值运算符</td>
+</tr>
+<tr>
+<td>比较运算符</td>
+<td>&#x3D;&#x3D;、!&#x3D;、&gt;、&lt;、&gt;&#x3D;、&lt;&#x3D;</td>
+</tr>
+<tr>
+<td>逻辑运算符</td>
+<td>&amp;&amp;、</td>
+</tr>
+<tr>
+<td>位运算符</td>
+<td>&amp;、</td>
+</tr>
+<tr>
+<td>范围运算符</td>
+<td>闭区间(…)、半开区间(..&lt;)、单侧区间</td>
+</tr>
+<tr>
+<td>类型转换</td>
+<td>数值类型转换、字符串与数值转换</td>
+</tr>
+</tbody></table>
+<h2 id="六、遇到的问题及解决方案"><a href="#六、遇到的问题及解决方案" class="headerlink" title="六、遇到的问题及解决方案"></a>六、遇到的问题及解决方案</h2><h3 id="1-可选类型的强制解包崩溃"><a href="#1-可选类型的强制解包崩溃" class="headerlink" title="1. 可选类型的强制解包崩溃"></a>1. 可选类型的强制解包崩溃</h3><p><strong>问题</strong>：使用<code>!</code>强制解包可选类型时，如果值为<code>nil</code>，会导致运行时崩溃</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalString: <span class="type">String</span>? <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line"><span class="keyword">let</span> unwrappedString <span class="operator">=</span> optionalString<span class="operator">!</span> <span class="comment">// 运行时崩溃</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：使用可选绑定或空合并运算符进行安全解包</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可选绑定</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> unwrappedString <span class="operator">=</span> optionalString &#123;</span><br><span class="line">    <span class="built_in">print</span>(unwrappedString)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;字符串为nil&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 空合并运算符</span></span><br><span class="line"><span class="keyword">let</span> displayString <span class="operator">=</span> optionalString <span class="operator">??</span> <span class="string">&quot;默认值&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-类型推断失败"><a href="#2-类型推断失败" class="headerlink" title="2. 类型推断失败"></a>2. 类型推断失败</h3><p><strong>问题</strong>：当Swift无法推断类型时出现编译错误</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers <span class="operator">=</span> [] <span class="comment">// 错误：Cannot infer contextual base in reference to member &#x27;append&#x27;</span></span><br><span class="line">numbers.append(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：显式指定类型</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers: [<span class="type">Int</span>] <span class="operator">=</span> [] <span class="comment">// 显式指定为Int类型数组</span></span><br><span class="line">numbers.append(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-集合类型的类型不匹配"><a href="#3-集合类型的类型不匹配" class="headerlink" title="3. 集合类型的类型不匹配"></a>3. 集合类型的类型不匹配</h3><p><strong>问题</strong>：尝试将不同类型的元素添加到集合中</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers: [<span class="type">Int</span>] <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">numbers.append(<span class="string">&quot;4&quot;</span>) <span class="comment">// 错误：Cannot convert value of type &#x27;String&#x27; to expected argument type &#x27;Int&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：确保添加的元素类型与集合类型一致，或使用类型转换</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法1：添加相同类型</span></span><br><span class="line">numbers.append(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法2：类型转换</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> num <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;4&quot;</span>) &#123;</span><br><span class="line">    numbers.append(num)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-字符串与数值转换失败"><a href="#4-字符串与数值转换失败" class="headerlink" title="4. 字符串与数值转换失败"></a>4. 字符串与数值转换失败</h3><p><strong>问题</strong>：尝试将无效字符串转换为数值</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringToInt <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;abc&quot;</span>) <span class="comment">// 返回nil</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：使用可选绑定处理转换失败的情况</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> value <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;abc&quot;</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;转换成功：<span class="subst">\(value)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;转换失败，使用默认值&quot;</span>)</span><br><span class="line">    <span class="keyword">let</span> value <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-字典的安全访问"><a href="#5-字典的安全访问" class="headerlink" title="5. 字典的安全访问"></a>5. 字典的安全访问</h3><p><strong>问题</strong>：从字典中获取值时类型不确定</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person: [<span class="type">String</span>: <span class="keyword">Any</span>] <span class="operator">=</span> [<span class="string">&quot;name&quot;</span>: <span class="string">&quot;张三&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">25</span>]</span><br><span class="line"><span class="keyword">let</span> age <span class="operator">=</span> person[<span class="string">&quot;age&quot;</span>] <span class="comment">// 返回Any?类型</span></span><br><span class="line">age <span class="operator">+</span> <span class="number">1</span> <span class="comment">// 错误：Binary operator &#x27;+&#x27; cannot be applied to operands of type &#x27;Any?&#x27; and &#x27;Int&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：使用类型转换进行安全访问</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> age <span class="operator">=</span> person[<span class="string">&quot;age&quot;</span>] <span class="keyword">as?</span> <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> nextYearAge <span class="operator">=</span> age <span class="operator">+</span> <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;明年年龄：<span class="subst">\(nextYearAge)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七、高阶用法"><a href="#七、高阶用法" class="headerlink" title="七、高阶用法"></a>七、高阶用法</h2><h3 id="1-高级数据类型技巧"><a href="#1-高级数据类型技巧" class="headerlink" title="1. 高级数据类型技巧"></a>1. 高级数据类型技巧</h3><h4 id="类型别名的高级应用"><a href="#类型别名的高级应用" class="headerlink" title="类型别名的高级应用"></a>类型别名的高级应用</h4><p>使用类型别名创建复杂类型的简化表示：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 复杂字典类型的简化</span></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">UserDictionary</span> <span class="operator">=</span> [<span class="type">String</span>: [<span class="type">String</span>: <span class="keyword">Any</span>]]</span><br><span class="line"><span class="keyword">let</span> users: <span class="type">UserDictionary</span> <span class="operator">=</span> [</span><br><span class="line">    <span class="string">&quot;user1&quot;</span>: [<span class="string">&quot;name&quot;</span>: <span class="string">&quot;张三&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">25</span>],</span><br><span class="line">    <span class="string">&quot;user2&quot;</span>: [<span class="string">&quot;name&quot;</span>: <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">30</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数类型的简化</span></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">CompletionHandler</span>&lt;<span class="type">T</span>&gt; <span class="operator">=</span> (<span class="type">Result</span>&lt;<span class="type">T</span>, <span class="type">Error</span>&gt;) -&gt; <span class="type">Void</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchData</span>(<span class="params">completion</span>: <span class="type">CompletionHandler</span>&lt;<span class="type">Data</span>&gt;) &#123;</span><br><span class="line">    <span class="comment">// 实现</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 泛型类型的简化</span></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">Coordinates</span>&lt;<span class="type">T</span>&gt; <span class="operator">=</span> (latitude: <span class="type">T</span>, longitude: <span class="type">T</span>)</span><br><span class="line"><span class="keyword">let</span> location: <span class="type">Coordinates</span>&lt;<span class="type">Double</span>&gt; <span class="operator">=</span> (<span class="number">39.9042</span>, <span class="number">116.4074</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="自定义运算符"><a href="#自定义运算符" class="headerlink" title="自定义运算符"></a>自定义运算符</h4><p>Swift允许创建自定义运算符，增强代码的可读性：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义自定义中缀运算符</span></span><br><span class="line"><span class="keyword">infix</span> <span class="keyword">operator</span> <span class="title">**</span>: <span class="type">MultiplicationPrecedence</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现自定义运算符</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">**</span>(<span class="params">base</span>: <span class="type">Double</span>, <span class="params">exponent</span>: <span class="type">Double</span>) -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> pow(base, exponent)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用自定义运算符</span></span><br><span class="line"><span class="keyword">let</span> result <span class="operator">=</span> <span class="number">2.0</span> <span class="operator">**</span> <span class="number">3.0</span> <span class="comment">// 输出：8.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-高级字符串操作"><a href="#2-高级字符串操作" class="headerlink" title="2. 高级字符串操作"></a>2. 高级字符串操作</h3><h4 id="字符串的高级遍历"><a href="#字符串的高级遍历" class="headerlink" title="字符串的高级遍历"></a>字符串的高级遍历</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text <span class="operator">=</span> <span class="string">&quot;Hello Swift!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 按单词遍历</span></span><br><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> text.split(separator: <span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words &#123;</span><br><span class="line">    <span class="built_in">print</span>(word) <span class="comment">// 输出：Hello, Swift!</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按行遍历（多行字符串）</span></span><br><span class="line"><span class="keyword">let</span> multiLine <span class="operator">=</span> <span class="string">&quot;Line 1<span class="subst">\n</span>Line 2<span class="subst">\n</span>Line 3&quot;</span></span><br><span class="line"><span class="keyword">let</span> lines <span class="operator">=</span> multiLine.split(separator: <span class="string">&quot;<span class="subst">\n</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用enumerated()获取字符和索引</span></span><br><span class="line"><span class="keyword">for</span> (index, character) <span class="keyword">in</span> text.enumerated() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;索引<span class="subst">\(index)</span>: <span class="subst">\(character)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串的高级搜索"><a href="#字符串的高级搜索" class="headerlink" title="字符串的高级搜索"></a>字符串的高级搜索</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text <span class="operator">=</span> <span class="string">&quot;Hello Swift, Swift is great!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找第一个匹配的范围</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> range <span class="operator">=</span> text.range(of: <span class="string">&quot;Swift&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> matchedText <span class="operator">=</span> text[range] <span class="comment">// &quot;Swift&quot;</span></span><br><span class="line">    <span class="keyword">let</span> startIndex <span class="operator">=</span> range.lowerBound</span><br><span class="line">    <span class="keyword">let</span> endIndex <span class="operator">=</span> range.upperBound</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找所有匹配项</span></span><br><span class="line"><span class="keyword">var</span> searchRange <span class="operator">=</span> text.startIndex<span class="operator">..&lt;</span>text.endIndex</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">let</span> range <span class="operator">=</span> text.range(of: <span class="string">&quot;Swift&quot;</span>, range: searchRange) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;找到匹配：<span class="subst">\(text[range])</span>&quot;</span>)</span><br><span class="line">    searchRange <span class="operator">=</span> range.upperBound<span class="operator">..&lt;</span>text.endIndex</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 忽略大小写搜索</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> range <span class="operator">=</span> text.range(of: <span class="string">&quot;swift&quot;</span>, options: .caseInsensitive) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;忽略大小写找到：<span class="subst">\(text[range])</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-高级集合操作"><a href="#3-高级集合操作" class="headerlink" title="3. 高级集合操作"></a>3. 高级集合操作</h3><h4 id="数组的高级操作"><a href="#数组的高级操作" class="headerlink" title="数组的高级操作"></a>数组的高级操作</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用高阶函数处理数组</span></span><br><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 映射：将数组中的每个元素转换为新值</span></span><br><span class="line"><span class="keyword">let</span> squared <span class="operator">=</span> numbers.map &#123; <span class="variable">$0</span> <span class="operator">*</span> <span class="variable">$0</span> &#125; <span class="comment">// [1, 4, 9, 16, 25]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 过滤：根据条件筛选元素</span></span><br><span class="line"><span class="keyword">let</span> evenNumbers <span class="operator">=</span> numbers.filter &#123; <span class="variable">$0</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span> &#125; <span class="comment">// [2, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 归约：将数组中的元素合并为单个值</span></span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> numbers.reduce(<span class="number">0</span>, <span class="operator">+</span>) <span class="comment">// 15</span></span><br><span class="line"><span class="keyword">let</span> product <span class="operator">=</span> numbers.reduce(<span class="number">1</span>, <span class="operator">*</span>) <span class="comment">// 120</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 扁平映射：将嵌套数组转换为一维数组</span></span><br><span class="line"><span class="keyword">let</span> nestedArray <span class="operator">=</span> [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]]</span><br><span class="line"><span class="keyword">let</span> flattenedArray <span class="operator">=</span> nestedArray.flatMap &#123; <span class="variable">$0</span> &#125; <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="集合的高级运算"><a href="#集合的高级运算" class="headerlink" title="集合的高级运算"></a>集合的高级运算</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> setA: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> setB: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查子集和超集</span></span><br><span class="line"><span class="keyword">let</span> isSubset <span class="operator">=</span> setA.isSubset(of: setB) <span class="comment">// false</span></span><br><span class="line"><span class="keyword">let</span> isSuperset <span class="operator">=</span> setA.isSuperset(of: setB) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查交集是否为空</span></span><br><span class="line"><span class="keyword">let</span> isDisjoint <span class="operator">=</span> setA.isDisjoint(with: setB) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合转换</span></span><br><span class="line"><span class="keyword">let</span> sortedArray <span class="operator">=</span> setA.sorted() <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="keyword">let</span> arrayToSet <span class="operator">=</span> <span class="type">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>]) <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字典的高级操作"><a href="#字典的高级操作" class="headerlink" title="字典的高级操作"></a>字典的高级操作</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字典转换</span></span><br><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>: <span class="string">&quot;一&quot;</span>, <span class="number">2</span>: <span class="string">&quot;二&quot;</span>, <span class="number">3</span>: <span class="string">&quot;三&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字典转换为元组数组</span></span><br><span class="line"><span class="keyword">let</span> keyValuePairs <span class="operator">=</span> <span class="type">Array</span>(numbers) <span class="comment">// [(1, &quot;一&quot;), (2, &quot;二&quot;), (3, &quot;三&quot;)]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据键排序</span></span><br><span class="line"><span class="keyword">let</span> sortedByKey <span class="operator">=</span> numbers.sorted &#123; <span class="variable">$0</span>.key <span class="operator">&lt;</span> <span class="variable">$1</span>.key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据值排序</span></span><br><span class="line"><span class="keyword">let</span> sortedByValue <span class="operator">=</span> numbers.sorted &#123; <span class="variable">$0</span>.value <span class="operator">&lt;</span> <span class="variable">$1</span>.value &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过滤字典</span></span><br><span class="line"><span class="keyword">let</span> filteredDictionary <span class="operator">=</span> numbers.filter &#123; <span class="variable">$0</span>.key <span class="operator">&gt;</span> <span class="number">1</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-高级类型转换"><a href="#4-高级类型转换" class="headerlink" title="4. 高级类型转换"></a>4. 高级类型转换</h3><h4 id="自定义类型转换"><a href="#自定义类型转换" class="headerlink" title="自定义类型转换"></a>自定义类型转换</h4><p>为自定义类型实现<code>ExpressibleBy...</code>协议，支持字面量初始化：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义时间间隔类型</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TimeInterval</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> seconds: <span class="type">Double</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现ExpressibleByFloatLiteral协议</span></span><br><span class="line"><span class="keyword">extension</span> <span class="title class_">TimeInterval</span>: <span class="title class_ inherited__">ExpressibleByFloatLiteral</span> &#123;</span><br><span class="line">    <span class="keyword">init</span>(<span class="params">floatLiteral</span> <span class="params">value</span>: <span class="type">FloatLiteralType</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.seconds <span class="operator">=</span> value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现ExpressibleByIntegerLiteral协议</span></span><br><span class="line"><span class="keyword">extension</span> <span class="title class_">TimeInterval</span>: <span class="title class_ inherited__">ExpressibleByIntegerLiteral</span> &#123;</span><br><span class="line">    <span class="keyword">init</span>(<span class="params">integerLiteral</span> <span class="params">value</span>: <span class="type">IntegerLiteralType</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.seconds <span class="operator">=</span> <span class="type">Double</span>(value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在可以使用字面量初始化</span></span><br><span class="line"><span class="keyword">let</span> interval1: <span class="type">TimeInterval</span> <span class="operator">=</span> <span class="number">10.5</span> <span class="comment">// 10.5秒</span></span><br><span class="line"><span class="keyword">let</span> interval2: <span class="type">TimeInterval</span> <span class="operator">=</span> <span class="number">5</span> <span class="comment">// 5秒</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-性能优化策略"><a href="#5-性能优化策略" class="headerlink" title="5. 性能优化策略"></a>5. 性能优化策略</h3><h4 id="集合性能优化"><a href="#集合性能优化" class="headerlink" title="集合性能优化"></a>集合性能优化</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 预分配数组容量</span></span><br><span class="line"><span class="keyword">var</span> numbers: [<span class="type">Int</span>] <span class="operator">=</span> []</span><br><span class="line">numbers.reserveCapacity(<span class="number">1000</span>) <span class="comment">// 预分配1000个元素的空间</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span><span class="operator">..&lt;</span><span class="number">1000</span> &#123;</span><br><span class="line">    numbers.append(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Set进行快速查找</span></span><br><span class="line"><span class="keyword">let</span> largeArray <span class="operator">=</span> <span class="type">Array</span>(<span class="number">0</span><span class="operator">..&lt;</span><span class="number">10000</span>)</span><br><span class="line"><span class="keyword">let</span> largeSet <span class="operator">=</span> <span class="type">Set</span>(largeArray)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set的contains操作是O(1)，Array是O(n)</span></span><br><span class="line"><span class="keyword">let</span> contains <span class="operator">=</span> largeSet.contains(<span class="number">9999</span>) <span class="comment">// 快速查找</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串性能优化"><a href="#字符串性能优化" class="headerlink" title="字符串性能优化"></a>字符串性能优化</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大量字符串拼接时使用String.append</span></span><br><span class="line"><span class="keyword">var</span> result <span class="operator">=</span> <span class="string">&quot;&quot;</span></span><br><span class="line">result.reserveCapacity(<span class="number">1000</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span><span class="operator">..&lt;</span><span class="number">1000</span> &#123;</span><br><span class="line">    result.append(<span class="type">String</span>(i))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 避免不必要的字符串转换</span></span><br><span class="line"><span class="keyword">let</span> number <span class="operator">=</span> <span class="number">100</span></span><br><span class="line"><span class="keyword">let</span> string <span class="operator">=</span> <span class="type">String</span>(number) <span class="comment">// 只转换一次</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-最佳实践"><a href="#6-最佳实践" class="headerlink" title="6. 最佳实践"></a>6. 最佳实践</h3><h4 id="数据类型选择"><a href="#数据类型选择" class="headerlink" title="数据类型选择"></a>数据类型选择</h4><ul>
+<li>优先使用<code>Int</code>而不是具体的位数类型（如Int32），除非有特定的存储需求</li>
+<li>优先使用<code>Double</code>而不是<code>Float</code>，除非有严格的内存限制</li>
+<li>选择合适的集合类型：<ul>
+<li>需要有序集合时使用<code>Array</code></li>
+<li>需要唯一元素时使用<code>Set</code></li>
+<li>需要键值对映射时使用<code>Dictionary</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="可选类型处理"><a href="#可选类型处理" class="headerlink" title="可选类型处理"></a>可选类型处理</h4><ul>
+<li>尽量避免使用<code>!</code>强制解包</li>
+<li>使用<code>guard let</code>提前退出，减少嵌套</li>
+<li>使用<code>??</code>提供合理的默认值</li>
+</ul>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><ul>
+<li>始终使用可选绑定处理类型转换结果</li>
+<li>为自定义类型实现适当的转换协议</li>
+<li>避免不必要的类型转换</li>
+</ul>
+<h2 id="八、实践练习"><a href="#八、实践练习" class="headerlink" title="八、实践练习"></a>八、实践练习</h2><h3 id="1-数据类型基础"><a href="#1-数据类型基础" class="headerlink" title="1. 数据类型基础"></a>1. 数据类型基础</h3><p><strong>题目1</strong>：创建一个包含5个不同类型元素的元组，并使用命名和索引两种方式访问元素。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建元组</span></span><br><span class="line"><span class="keyword">let</span> person <span class="operator">=</span> (name: <span class="string">&quot;张三&quot;</span>, age: <span class="number">25</span>, isStudent: <span class="literal">true</span>, height: <span class="number">1.75</span>, weight: <span class="number">65.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用命名访问</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;姓名：<span class="subst">\(person.name)</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;年龄：<span class="subst">\(person.age)</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用索引访问</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;身高：<span class="subst">\(person.<span class="number">3</span>)</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;体重：<span class="subst">\(person.<span class="number">4</span>)</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目2</strong>：创建一个包含10个整数的数组，然后：</p>
+<ul>
+<li>添加一个元素到末尾</li>
+<li>移除第一个元素</li>
+<li>计算数组所有元素的和</li>
+</ul>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建数组</span></span><br><span class="line"><span class="keyword">var</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加元素到末尾</span></span><br><span class="line">numbers.append(<span class="number">11</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除第一个元素</span></span><br><span class="line">numbers.removeFirst()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算数组所有元素的和</span></span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> numbers.reduce(<span class="number">0</span>, <span class="operator">+</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数组所有元素的和：<span class="subst">\(sum)</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-集合类型应用"><a href="#2-集合类型应用" class="headerlink" title="2. 集合类型应用"></a>2. 集合类型应用</h3><p><strong>题目3</strong>：创建两个字符串数组，使用Set找出它们的交集和并集。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建数组</span></span><br><span class="line"><span class="keyword">let</span> array1 <span class="operator">=</span> [<span class="string">&quot;苹果&quot;</span>, <span class="string">&quot;香蕉&quot;</span>, <span class="string">&quot;橙子&quot;</span>, <span class="string">&quot;葡萄&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> array2 <span class="operator">=</span> [<span class="string">&quot;橙子&quot;</span>, <span class="string">&quot;葡萄&quot;</span>, <span class="string">&quot;西瓜&quot;</span>, <span class="string">&quot;草莓&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为Set</span></span><br><span class="line"><span class="keyword">let</span> set1 <span class="operator">=</span> <span class="type">Set</span>(array1)</span><br><span class="line"><span class="keyword">let</span> set2 <span class="operator">=</span> <span class="type">Set</span>(array2)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出交集</span></span><br><span class="line"><span class="keyword">let</span> intersection <span class="operator">=</span> set1.intersection(set2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;交集：<span class="subst">\(intersection)</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出并集</span></span><br><span class="line"><span class="keyword">let</span> union <span class="operator">=</span> set1.union(set2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;并集：<span class="subst">\(union)</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目4</strong>：创建一个字典，键为字符串（表示姓名），值为整数（表示年龄）。然后：</p>
+<ul>
+<li>添加一个新的键值对</li>
+<li>修改一个现有键的值</li>
+<li>检查是否包含某个键</li>
+</ul>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建字典</span></span><br><span class="line"><span class="keyword">var</span> ages <span class="operator">=</span> [<span class="string">&quot;张三&quot;</span>: <span class="number">25</span>, <span class="string">&quot;李四&quot;</span>: <span class="number">30</span>, <span class="string">&quot;王五&quot;</span>: <span class="number">35</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加新的键值对</span></span><br><span class="line">ages[<span class="string">&quot;赵六&quot;</span>] <span class="operator">=</span> <span class="number">40</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改现有键的值</span></span><br><span class="line">ages[<span class="string">&quot;李四&quot;</span>] <span class="operator">=</span> <span class="number">31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查是否包含某个键</span></span><br><span class="line"><span class="keyword">if</span> ages.contains(where: &#123; <span class="variable">$0</span>.key <span class="operator">==</span> <span class="string">&quot;王五&quot;</span> &#125;) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;字典包含&#x27;王五&#x27;&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;字典不包含&#x27;王五&#x27;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-运算符与类型转换"><a href="#3-运算符与类型转换" class="headerlink" title="3. 运算符与类型转换"></a>3. 运算符与类型转换</h3><p><strong>题目5</strong>：实现一个自定义的时间间隔结构<code>TimeInterval</code>，支持通过整数和浮点数字面量初始化。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义时间间隔类型</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TimeInterval</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> seconds: <span class="type">Double</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现ExpressibleByFloatLiteral协议</span></span><br><span class="line"><span class="keyword">extension</span> <span class="title class_">TimeInterval</span>: <span class="title class_ inherited__">ExpressibleByFloatLiteral</span> &#123;</span><br><span class="line">    <span class="keyword">init</span>(<span class="params">floatLiteral</span> <span class="params">value</span>: <span class="type">FloatLiteralType</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.seconds <span class="operator">=</span> value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现ExpressibleByIntegerLiteral协议</span></span><br><span class="line"><span class="keyword">extension</span> <span class="title class_">TimeInterval</span>: <span class="title class_ inherited__">ExpressibleByIntegerLiteral</span> &#123;</span><br><span class="line">    <span class="keyword">init</span>(<span class="params">integerLiteral</span> <span class="params">value</span>: <span class="type">IntegerLiteralType</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.seconds <span class="operator">=</span> <span class="type">Double</span>(value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用字面量初始化</span></span><br><span class="line"><span class="keyword">let</span> interval1: <span class="type">TimeInterval</span> <span class="operator">=</span> <span class="number">10.5</span> <span class="comment">// 10.5秒</span></span><br><span class="line"><span class="keyword">let</span> interval2: <span class="type">TimeInterval</span> <span class="operator">=</span> <span class="number">5</span> <span class="comment">// 5秒</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>题目6</strong>：将字符串”123.45”转换为Double类型，然后将结果转换为Int类型。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串转Double</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> doubleValue <span class="operator">=</span> <span class="type">Double</span>(<span class="string">&quot;123.45&quot;</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Double值：<span class="subst">\(doubleValue)</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Double转Int</span></span><br><span class="line">    <span class="keyword">let</span> intValue <span class="operator">=</span> <span class="type">Int</span>(doubleValue)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Int值：<span class="subst">\(intValue)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;转换失败&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>在这篇学习日记中，我们深入探讨了Swift的数据类型和运算符：</p>
+<ol>
+<li><strong>数据类型</strong>：包括数值类型、布尔类型、字符串类型、集合类型（数组、集合、字典）、元组类型和可选类型</li>
+<li><strong>运算符</strong>：包括算术运算符、比较运算符、逻辑运算符、位运算符和范围运算符</li>
+<li><strong>类型转换</strong>：不同数值类型之间的转换以及字符串与数值之间的转换</li>
+<li><strong>高级用法</strong>：包括自定义运算符、高级集合操作、性能优化策略等</li>
+</ol>
+<p>理解这些基础概念对于Swift编程至关重要，它们是构建更复杂功能的基础。在下一篇学习日记中，我们将继续学习Swift的控制流语句，包括条件语句和循环语句的高级用法。</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/ios.github.io/2025/12/05/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>swift学习日记(三)</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/ios.github.io/2025/12/04/WeatheKit%20%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">
+        <span>WeatherKit 使用文档</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/ios.github.io/2025/12/04/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">Swift学习日记（二）：数据类型与运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">一、引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">二、数据类型详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">浮点类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 集合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-Array"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">数组(Array)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88-Set"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">集合(Set)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8-Dictionary"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">字典(Dictionary)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%85%83%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 元组类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 可选类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">三、运算符详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%8C%83%E5%9B%B4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 范围运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">四、类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 数值类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E5%80%BC%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 字符串与数值之间的转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%86%85%E5%AE%B9%E6%9C%BA%E5%88%B6%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">五、内容机制与知识点总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%85%E5%AE%B9%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 内容机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 知识点总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.6.</span> <span class="toc-text">六、遇到的问题及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%BC%BA%E5%88%B6%E8%A7%A3%E5%8C%85%E5%B4%A9%E6%BA%83"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 可选类型的强制解包崩溃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD%E5%A4%B1%E8%B4%A5"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 类型推断失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8D%E5%8C%B9%E9%85%8D"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. 集合类型的类型不匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E5%80%BC%E8%BD%AC%E6%8D%A2%E5%A4%B1%E8%B4%A5"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. 字符串与数值转换失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AD%97%E5%85%B8%E7%9A%84%E5%AE%89%E5%85%A8%E8%AE%BF%E9%97%AE"><span class="toc-number">1.6.5.</span> <span class="toc-text">5. 字典的安全访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E9%AB%98%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">七、高阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%8A%80%E5%B7%A7"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 高级数据类型技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">类型别名的高级应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">自定义运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%AB%98%E7%BA%A7%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 高级字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%AB%98%E7%BA%A7%E9%81%8D%E5%8E%86"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">字符串的高级遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">字符串的高级搜索</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%AB%98%E7%BA%A7%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 高级集合操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">数组的高级操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E9%AB%98%E7%BA%A7%E8%BF%90%E7%AE%97"><span class="toc-number">1.7.3.2.</span> <span class="toc-text">集合的高级运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">1.7.3.3.</span> <span class="toc-text">字典的高级操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.4.</span> <span class="toc-text">4. 高级类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.4.1.</span> <span class="toc-text">自定义类型转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="toc-number">1.7.5.</span> <span class="toc-text">5. 性能优化策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.5.1.</span> <span class="toc-text">集合性能优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.5.2.</span> <span class="toc-text">字符串性能优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.7.6.</span> <span class="toc-text">6. 最佳实践</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="toc-number">1.7.6.1.</span> <span class="toc-text">数据类型选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86"><span class="toc-number">1.7.6.2.</span> <span class="toc-text">可选类型处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.6.3.</span> <span class="toc-text">类型转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%AE%9E%E8%B7%B5%E7%BB%83%E4%B9%A0"><span class="toc-number">1.8.</span> <span class="toc-text">八、实践练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. 数据类型基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. 集合类型应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.8.3.</span> <span class="toc-text">3. 运算符与类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">九、总结</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2025 - 2025 
+        
+        猪会飞
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <span>Theme: <a href="https://github.com/kb1000fx/hexo-theme-meadow" rel="noopener" target="_blank">Meadow</a></span>
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/ios.github.io/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/ios.github.io/js/meadow.js"></script>
+
+</body>
+</html >

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/ios.github.io/./././images/userImage.JPG">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/ios.github.io/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/ios.github.io/css/main.css">
+<link rel="stylesheet" href="/ios.github.io/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            swift学习日记(八) | 猪会飞的博客
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/ios.github.io/" class="mdui-typo-headline">猪会飞的博客</a>
+    <a href="/ios.github.io/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/ios.github.io/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/ios.github.io/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/ios.github.io/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/ios.github.io/./././images/userImage.JPG"/>
+                
+            </div>
+            <div class="sidebar-author-name">猪会飞</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:2839029331@qq.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/YCCIT123" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/">swift学习日记(八)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2025-12-12
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2025-12-04
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=swift学习日记(八)&url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/&pic=https://yccit123.github.io/ios.github.io/ios.github.io/./././images/userImage.JPG&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=swift学习日记(八)&url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/&via=猪会飞" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/&title=swift学习日记(八)" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=猪会飞的博客&title=swift学习日记(八)&summary=&pics=https://yccit123.github.io/ios.github.io/ios.github.io/./././images/userImage.JPG&url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://yccit123.github.io/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/&text=swift学习日记(八)" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /ios.github.io/tags/swift/ >swift</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h1 id="Swift学习日记（八）：错误处理"><a href="#Swift学习日记（八）：错误处理" class="headerlink" title="Swift学习日记（八）：错误处理"></a>Swift学习日记（八）：错误处理</h1><h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>在上一篇学习日记中，我们学习了Swift的扩展和泛型，它们是编写灵活、可重用代码的重要工具。在这篇日记中，我们将探讨Swift的错误处理机制。错误处理是编程中不可或缺的一部分，它允许我们在程序运行时处理可能出现的错误情况，使代码更加健壮和可靠。</p>
+<!-- CATEGORY: 错误处理 -->
+<!-- INTERVIEW_TOPIC: 错误处理基础 -->
+<!-- HIGH_FREQUENCY_INTERVIEW: 错误处理概念 -->
+
+<h2 id="二、错误处理的基本概念"><a href="#二、错误处理的基本概念" class="headerlink" title="二、错误处理的基本概念"></a>二、错误处理的基本概念</h2><p>在Swift中，错误是指在程序运行时可能出现的异常情况，例如文件不存在、网络连接失败、数据格式错误等。Swift的错误处理机制允许我们：</p>
+<ol>
+<li><strong>表示错误</strong>：使用枚举等类型来表示不同类型的错误</li>
+<li><strong>抛出错误</strong>：当遇到错误情况时，将错误抛出</li>
+<li><strong>捕获错误</strong>：在适当的地方捕获并处理错误</li>
+<li><strong>传播错误</strong>：将错误从一个函数传递到另一个函数</li>
+<li><strong>恢复错误</strong>：在处理错误后，尝试恢复程序的正常执行</li>
+</ol>
+<!-- INTERVIEW_TOPIC: 错误表示 -->
+<!-- HIGH_FREQUENCY_INTERVIEW: Error协议 -->
+
+<h2 id="三、表示错误"><a href="#三、表示错误" class="headerlink" title="三、表示错误"></a>三、表示错误</h2><p>在Swift中，我们可以使用遵循<code>Error</code>协议的类型来表示错误。<code>Error</code>协议是空协议，它只是作为错误类型的标记。通常，我们使用枚举来表示错误，因为枚举可以关联相关的值，使错误信息更加丰富。</p>
+<h3 id="1-使用枚举表示错误"><a href="#1-使用枚举表示错误" class="headerlink" title="1. 使用枚举表示错误"></a>1. 使用枚举表示错误</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个枚举，表示网络请求错误</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">NetworkError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> invalidURL <span class="comment">// 无效的URL</span></span><br><span class="line">    <span class="keyword">case</span> requestFailed(statusCode: <span class="type">Int</span>) <span class="comment">// 请求失败，关联状态码</span></span><br><span class="line">    <span class="keyword">case</span> timeout <span class="comment">// 请求超时</span></span><br><span class="line">    <span class="keyword">case</span> unknown <span class="comment">// 未知错误</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义另一个枚举，表示文件操作错误</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">FileError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> fileNotFound(path: <span class="type">String</span>) <span class="comment">// 文件不存在，关联文件路径</span></span><br><span class="line">    <span class="keyword">case</span> permissionDenied(path: <span class="type">String</span>) <span class="comment">// 权限拒绝，关联文件路径</span></span><br><span class="line">    <span class="keyword">case</span> fileIsDirectory(path: <span class="type">String</span>) <span class="comment">// 文件是目录，关联文件路径</span></span><br><span class="line">    <span class="keyword">case</span> writeFailed(reason: <span class="type">String</span>) <span class="comment">// 写入失败，关联失败原因</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用结构体表示错误"><a href="#2-使用结构体表示错误" class="headerlink" title="2. 使用结构体表示错误"></a>2. 使用结构体表示错误</h3><p>我们也可以使用结构体来表示错误：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个结构体，表示数据验证错误</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ValidationError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> field: <span class="type">String</span> <span class="comment">// 验证失败的字段</span></span><br><span class="line">    <span class="keyword">let</span> message: <span class="type">String</span> <span class="comment">// 错误信息</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(<span class="params">field</span>: <span class="type">String</span>, <span class="params">message</span>: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.field <span class="operator">=</span> field</span><br><span class="line">        <span class="keyword">self</span>.message <span class="operator">=</span> message</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<!-- INTERVIEW_TOPIC: 错误抛出与捕获 -->
+<!-- HIGH_FREQUENCY_INTERVIEW: do-catch语句 -->
+
+<h2 id="四、抛出错误"><a href="#四、抛出错误" class="headerlink" title="四、抛出错误"></a>四、抛出错误</h2><p>在Swift中，我们使用<code>throw</code>关键字来抛出错误。只有在标记为<code>throws</code>的函数、方法或初始化器中才能抛出错误。</p>
+<h3 id="1-抛出错误的函数"><a href="#1-抛出错误的函数" class="headerlink" title="1. 抛出错误的函数"></a>1. 抛出错误的函数</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个可能抛出错误的函数</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchData</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">Data</span> &#123;</span><br><span class="line">    <span class="comment">// 检查URL是否有效</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> url <span class="operator">=</span> <span class="type">URL</span>(string: urlString) <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">NetworkError</span>.invalidURL</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 尝试发送请求（这里只是模拟，实际中应该使用URLSession）</span></span><br><span class="line">    <span class="keyword">let</span> statusCode <span class="operator">=</span> <span class="number">404</span> <span class="comment">// 模拟请求失败，状态码为404</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">guard</span> statusCode <span class="operator">==</span> <span class="number">200</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">NetworkError</span>.requestFailed(statusCode: statusCode)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果请求成功，返回数据</span></span><br><span class="line">    <span class="keyword">return</span> <span class="type">Data</span>() <span class="comment">// 模拟返回空数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-抛出错误的方法"><a href="#2-抛出错误的方法" class="headerlink" title="2. 抛出错误的方法"></a>2. 抛出错误的方法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个类，包含可能抛出错误的方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FileManager</span> &#123;</span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">writeFile</span>(<span class="params">data</span>: <span class="type">Data</span>, <span class="params">to</span> <span class="params">path</span>: <span class="type">String</span>) <span class="keyword">throws</span> &#123;</span><br><span class="line">        <span class="comment">// 检查文件是否存在</span></span><br><span class="line">        <span class="keyword">let</span> fileExists <span class="operator">=</span> <span class="literal">false</span> <span class="comment">// 模拟文件不存在</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">guard</span> fileExists <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="type">FileError</span>.fileNotFound(path: path)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 检查是否有写入权限</span></span><br><span class="line">        <span class="keyword">let</span> hasPermission <span class="operator">=</span> <span class="literal">false</span> <span class="comment">// 模拟没有写入权限</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">guard</span> hasPermission <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="type">FileError</span>.permissionDenied(path: path)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 尝试写入文件（这里只是模拟）</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;文件写入成功&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-抛出错误的初始化器"><a href="#3-抛出错误的初始化器" class="headerlink" title="3. 抛出错误的初始化器"></a>3. 抛出错误的初始化器</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个结构体，包含可能抛出错误的初始化器</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> email: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> password: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 可能抛出错误的初始化器</span></span><br><span class="line">    <span class="keyword">init</span>(<span class="params">email</span>: <span class="type">String</span>, <span class="params">password</span>: <span class="type">String</span>) <span class="keyword">throws</span> &#123;</span><br><span class="line">        <span class="comment">// 验证邮箱格式</span></span><br><span class="line">        <span class="keyword">let</span> emailRegex <span class="operator">=</span> <span class="string">&quot;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+<span class="subst">\\</span>.[A-Za-z]&#123;2,64&#125;&quot;</span></span><br><span class="line">        <span class="keyword">let</span> emailPredicate <span class="operator">=</span> <span class="type">NSPredicate</span>(format:<span class="string">&quot;SELF MATCHES %@&quot;</span>, emailRegex)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">guard</span> emailPredicate.evaluate(with: email) <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="type">ValidationError</span>(field: <span class="string">&quot;email&quot;</span>, message: <span class="string">&quot;无效的邮箱格式&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 验证密码长度</span></span><br><span class="line">        <span class="keyword">guard</span> password.count <span class="operator">&gt;=</span> <span class="number">6</span> <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="type">ValidationError</span>(field: <span class="string">&quot;password&quot;</span>, message: <span class="string">&quot;密码长度不能少于6个字符&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">self</span>.email <span class="operator">=</span> email</span><br><span class="line">        <span class="keyword">self</span>.password <span class="operator">=</span> password</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、捕获错误"><a href="#五、捕获错误" class="headerlink" title="五、捕获错误"></a>五、捕获错误</h2><p>在Swift中，我们使用<code>do-catch</code>语句来捕获和处理错误。<code>do</code>块中包含可能抛出错误的代码，<code>catch</code>块中包含处理错误的代码。</p>
+<h3 id="1-基本的do-catch语句"><a href="#1-基本的do-catch语句" class="headerlink" title="1. 基本的do-catch语句"></a>1. 基本的do-catch语句</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尝试调用可能抛出错误的函数</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求成功，获取到数据：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-捕获特定类型的错误"><a href="#2-捕获特定类型的错误" class="headerlink" title="2. 捕获特定类型的错误"></a>2. 捕获特定类型的错误</h3><p>我们可以使用<code>catch</code>块来捕获特定类型的错误：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求成功，获取到数据：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="type">NetworkError</span>.invalidURL &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;无效的URL&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="type">NetworkError</span>.requestFailed(<span class="keyword">let</span> statusCode) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求失败，状态码：<span class="subst">\(statusCode)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="type">NetworkError</span>.timeout &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求超时&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;其他错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-捕获所有错误"><a href="#3-捕获所有错误" class="headerlink" title="3. 捕获所有错误"></a>3. 捕获所有错误</h3><p>我们可以使用<code>catch</code>块捕获所有错误，并将错误绑定到一个变量：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> user <span class="operator">=</span> <span class="keyword">try</span> <span class="type">User</span>(email: <span class="string">&quot;invalid-email&quot;</span>, password: <span class="string">&quot;123&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;用户创建成功：<span class="subst">\(user)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">ValidationError</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证失败：<span class="subst">\(error.field)</span> - <span class="subst">\(error.message)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;其他错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、传播错误"><a href="#六、传播错误" class="headerlink" title="六、传播错误"></a>六、传播错误</h2><p>在Swift中，我们可以将错误从一个函数传播到另一个函数，这意味着如果一个函数调用了可能抛出错误的函数，那么它也可以将错误抛出，让调用者来处理。</p>
+<h3 id="1-传播错误的函数"><a href="#1-传播错误的函数" class="headerlink" title="1. 传播错误的函数"></a>1. 传播错误的函数</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数，它调用了可能抛出错误的函数，并将错误传播出去</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">processData</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="comment">// 调用fetchData函数，将错误传播出去</span></span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: urlString)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 处理数据（这里只是模拟）</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> result <span class="operator">=</span> <span class="type">String</span>(data: data, encoding: .utf8) <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">ValidationError</span>(field: <span class="string">&quot;data&quot;</span>, message: <span class="string">&quot;数据格式错误&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-传播错误的方法"><a href="#2-传播错误的方法" class="headerlink" title="2. 传播错误的方法"></a>2. 传播错误的方法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个类，包含传播错误的方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataProcessor</span> &#123;</span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">loadData</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="comment">// 调用processData函数，将错误传播出去</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">try</span> processData(from: urlString)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七、错误处理的高级用法"><a href="#七、错误处理的高级用法" class="headerlink" title="七、错误处理的高级用法"></a>七、错误处理的高级用法</h2><h3 id="1-try-和try"><a href="#1-try-和try" class="headerlink" title="1. try?和try!"></a>1. try?和try!</h3><p>除了使用<code>do-catch</code>语句捕获错误外，Swift还提供了两种简化的错误处理方式：<code>try?</code>和<code>try!</code>。</p>
+<h4 id="try"><a href="#try" class="headerlink" title="try?"></a>try?</h4><p><code>try?</code>将错误转换为可选值，如果函数抛出错误，则返回<code>nil</code>，否则返回函数的返回值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用try?将错误转换为可选值</span></span><br><span class="line"><span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try?</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> data <span class="operator">=</span> data &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求成功，获取到数据：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求失败&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="try-1"><a href="#try-1" class="headerlink" title="try!"></a>try!</h4><p><code>try!</code>用于确保函数不会抛出错误，如果函数抛出错误，则会导致运行时崩溃。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用try!确保函数不会抛出错误（谨慎使用）</span></span><br><span class="line"><span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try!</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;请求成功，获取到数据：<span class="subst">\(data)</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：<code>try!</code>应该谨慎使用，只有在确定函数不会抛出错误的情况下才使用。</p>
+<h3 id="2-defer语句"><a href="#2-defer语句" class="headerlink" title="2. defer语句"></a>2. defer语句</h3><p><code>defer</code>语句用于延迟执行代码，无论函数是否抛出错误，<code>defer</code>语句中的代码都会在函数返回前执行。<code>defer</code>语句通常用于资源清理，例如关闭文件、释放内存等。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">processFile</span>(<span class="params">at</span> <span class="params">path</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="comment">// 打开文件（这里只是模拟）</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;打开文件：<span class="subst">\(path)</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使用defer语句延迟关闭文件</span></span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;关闭文件：<span class="subst">\(path)</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 尝试读取文件内容</span></span><br><span class="line">    <span class="keyword">let</span> fileExists <span class="operator">=</span> <span class="literal">false</span> <span class="comment">// 模拟文件不存在</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">guard</span> fileExists <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">FileError</span>.fileNotFound(path: path)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 读取文件内容（这里只是模拟）</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;文件内容&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> content <span class="operator">=</span> <span class="keyword">try</span> processFile(at: <span class="string">&quot;/path/to/file.txt&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文件内容：<span class="subst">\(content)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;处理文件失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出：</span></span><br><span class="line"><span class="comment">// 打开文件：/path/to/file.txt</span></span><br><span class="line"><span class="comment">// 关闭文件：/path/to/file.txt</span></span><br><span class="line"><span class="comment">// 处理文件失败：fileNotFound(&quot;/path/to/file.txt&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重新抛出错误"><a href="#3-重新抛出错误" class="headerlink" title="3. 重新抛出错误"></a>3. 重新抛出错误</h3><p>如果一个函数接受一个可能抛出错误的闭包，那么它可以使用<code>rethrows</code>关键字来重新抛出闭包中的错误。<code>rethrows</code>关键字表示该函数只有在闭包抛出错误时才会抛出错误。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数，它接受一个可能抛出错误的闭包，并重新抛出错误</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">processItems</span>&lt;<span class="type">T</span>&gt;(<span class="keyword">_</span> <span class="params">items</span>: [<span class="type">T</span>], <span class="params">using</span> <span class="params">closure</span>: (<span class="type">T</span>) <span class="keyword">throws</span> -&gt; <span class="type">Void</span>) <span class="keyword">rethrows</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items &#123;</span><br><span class="line">        <span class="keyword">try</span> closure(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个可能抛出错误的闭包</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">validateItem</span>(<span class="keyword">_</span> <span class="params">item</span>: <span class="type">Int</span>) <span class="keyword">throws</span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> item <span class="operator">&gt;</span> <span class="number">0</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">ValidationError</span>(field: <span class="string">&quot;item&quot;</span>, message: <span class="string">&quot;项目必须大于0&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> items <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">    <span class="keyword">try</span> processItems(items, using: validateItem)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;所有项目验证通过&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;验证失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-自定义错误处理"><a href="#4-自定义错误处理" class="headerlink" title="4. 自定义错误处理"></a>4. 自定义错误处理</h3><p>我们可以自定义错误处理逻辑，例如重试机制、错误转换等。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数，实现重试机制</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchDataWithRetry</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>, <span class="params">maxRetries</span>: <span class="type">Int</span> <span class="operator">=</span> <span class="number">3</span>) <span class="keyword">throws</span> -&gt; <span class="type">Data</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> retries <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> retries <span class="operator">&lt;</span> maxRetries &#123;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">try</span> fetchData(from: urlString)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="type">NetworkError</span>.timeout &#123;</span><br><span class="line">            retries <span class="operator">+=</span> <span class="number">1</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;请求超时，重试第<span class="subst">\(retries)</span>次&quot;</span>)</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="comment">// 其他错误，直接抛出</span></span><br><span class="line">            <span class="keyword">throw</span> error</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 超过最大重试次数，抛出超时错误</span></span><br><span class="line">    <span class="keyword">throw</span> <span class="type">NetworkError</span>.timeout</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchDataWithRetry(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求成功，获取到数据：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请求失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="八、错误恢复"><a href="#八、错误恢复" class="headerlink" title="八、错误恢复"></a>八、错误恢复</h2><p>在处理错误后，我们可以尝试恢复程序的正常执行。错误恢复的方式取决于具体的应用场景，例如：</p>
+<ol>
+<li><strong>使用默认值</strong>：当遇到错误时，使用默认值代替</li>
+<li><strong>回退到备选方案</strong>：当一个方案失败时，尝试另一个方案</li>
+<li><strong>提示用户</strong>：向用户显示错误信息，并请求用户输入正确的信息</li>
+<li><strong>记录错误</strong>：将错误信息记录到日志文件中，以便后续分析</li>
+</ol>
+<h3 id="1-使用默认值"><a href="#1-使用默认值" class="headerlink" title="1. 使用默认值"></a>1. 使用默认值</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尝试加载配置文件，如果失败则使用默认配置</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> config <span class="operator">=</span> <span class="keyword">try</span> loadConfig(from: <span class="string">&quot;/path/to/config.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;使用配置：<span class="subst">\(config)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;加载配置文件失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;使用默认配置&quot;</span>)</span><br><span class="line">    <span class="comment">// 使用默认配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-回退到备选方案"><a href="#2-回退到备选方案" class="headerlink" title="2. 回退到备选方案"></a>2. 回退到备选方案</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尝试从主服务器获取数据，如果失败则从备用服务器获取</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: <span class="string">&quot;https://primary-server.com/data.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;从主服务器获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;从主服务器获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;尝试从备用服务器获取数据&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: <span class="string">&quot;https://backup-server.com/data.json&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;从备用服务器获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;从备用服务器获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="九、内容机制与知识点总结"><a href="#九、内容机制与知识点总结" class="headerlink" title="九、内容机制与知识点总结"></a>九、内容机制与知识点总结</h2><h3 id="1-Swift错误处理的设计原则"><a href="#1-Swift错误处理的设计原则" class="headerlink" title="1. Swift错误处理的设计原则"></a>1. Swift错误处理的设计原则</h3><p>Swift的错误处理机制体现了几个核心设计原则：</p>
+<ul>
+<li><strong>明确性</strong>：错误必须显式声明和处理，提高代码的可读性和可维护性</li>
+<li><strong>安全第一</strong>：编译时检查错误处理，减少运行时错误</li>
+<li><strong>灵活性</strong>：支持多种错误处理方式，适应不同的应用场景</li>
+<li><strong>无缝集成</strong>：与Swift的其他特性（如泛型、闭包）无缝集成</li>
+<li><strong>可扩展性</strong>：允许自定义错误类型和处理逻辑</li>
+</ul>
+<h3 id="2-核心知识点总结"><a href="#2-核心知识点总结" class="headerlink" title="2. 核心知识点总结"></a>2. 核心知识点总结</h3><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>描述</th>
+<th>主要特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>错误表示</td>
+<td>使用遵循<code>Error</code>协议的类型表示错误</td>
+<td>通常使用枚举或结构体</td>
+</tr>
+<tr>
+<td>抛出错误</td>
+<td>使用<code>throw</code>关键字抛出错误</td>
+<td>需在<code>throws</code>函数中使用</td>
+</tr>
+<tr>
+<td>捕获错误</td>
+<td>使用<code>do-catch</code>语句捕获和处理错误</td>
+<td>支持捕获特定类型的错误</td>
+</tr>
+<tr>
+<td>传播错误</td>
+<td>将错误从一个函数传递到另一个函数</td>
+<td>简化错误处理逻辑</td>
+</tr>
+<tr>
+<td><code>try?</code></td>
+<td>将错误转换为可选值</td>
+<td>错误时返回<code>nil</code></td>
+</tr>
+<tr>
+<td><code>try!</code></td>
+<td>强制解包错误</td>
+<td>错误时导致运行时崩溃</td>
+</tr>
+<tr>
+<td><code>defer</code></td>
+<td>延迟执行代码</td>
+<td>用于资源清理</td>
+</tr>
+<tr>
+<td><code>rethrows</code></td>
+<td>重新抛出闭包中的错误</td>
+<td>只有闭包抛出错误时才抛出</td>
+</tr>
+<tr>
+<td>错误恢复</td>
+<td>处理错误后恢复程序执行</td>
+<td>使用默认值、备选方案等</td>
+</tr>
+</tbody></table>
+<h2 id="十、遇到的问题及解决方案"><a href="#十、遇到的问题及解决方案" class="headerlink" title="十、遇到的问题及解决方案"></a>十、遇到的问题及解决方案</h2><h3 id="1-过度使用try-导致崩溃"><a href="#1-过度使用try-导致崩溃" class="headerlink" title="1. 过度使用try!导致崩溃"></a>1. 过度使用try!导致崩溃</h3><p><strong>问题</strong>：使用<code>try!</code>强制解包错误，当实际抛出错误时导致运行时崩溃</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try!</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>) <span class="comment">// 如果URL无效，会导致崩溃</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：使用<code>do-catch</code>或<code>try?</code>进行安全的错误处理</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用do-catch</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用try?</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try?</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据失败&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-错误处理代码嵌套过深"><a href="#2-错误处理代码嵌套过深" class="headerlink" title="2. 错误处理代码嵌套过深"></a>2. 错误处理代码嵌套过深</h3><p><strong>问题</strong>：多层<code>do-catch</code>导致代码嵌套过深，可读性差</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> config <span class="operator">=</span> <span class="keyword">try</span> loadConfig()</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> connection <span class="operator">=</span> <span class="keyword">try</span> establishConnection(config: config)</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(connection: connection)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;建立连接失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;加载配置失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：使用错误传播和<code>guard</code>语句减少嵌套</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> config <span class="operator">=</span> <span class="keyword">try</span> loadConfig()</span><br><span class="line">    <span class="keyword">let</span> connection <span class="operator">=</span> <span class="keyword">try</span> establishConnection(config: config)</span><br><span class="line">    <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(connection: connection)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">ConfigError</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;配置错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">ConnectionError</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;连接错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">DataError</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;数据错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;其他错误：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-忽略错误处理"><a href="#3-忽略错误处理" class="headerlink" title="3. 忽略错误处理"></a>3. 忽略错误处理</h3><p><strong>问题</strong>：使用<code>_</code>忽略错误处理，导致潜在问题被掩盖</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try?</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>) <span class="comment">// 忽略错误</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：至少记录错误，以便后续分析</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> error <span class="operator">=</span> <span class="keyword">try?</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>) &#123;</span><br><span class="line">    <span class="comment">// 处理数据</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;获取数据失败&quot;</span>)</span><br><span class="line">    <span class="comment">// 记录错误日志</span></span><br><span class="line">    <span class="type">Logger</span>.error(<span class="string">&quot;Failed to fetch data&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-defer语句的执行顺序问题"><a href="#4-defer语句的执行顺序问题" class="headerlink" title="4. defer语句的执行顺序问题"></a>4. defer语句的执行顺序问题</h3><p><strong>问题</strong>：不了解<code>defer</code>语句的执行顺序，导致资源管理错误</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">processFile</span>() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;1. 开始处理文件&quot;</span>)</span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;4. 清理资源1&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;5. 清理资源2&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;2. 处理文件内容&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;3. 结束处理文件&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出顺序：1, 2, 3, 5, 4</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：了解<code>defer</code>语句的执行顺序（后进先出）</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">processFile</span>() &#123;</span><br><span class="line">    <span class="comment">// 先声明的defer后执行</span></span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;最后执行的清理&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;中间执行的清理&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;最先执行的清理&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 处理文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-自定义错误类型信息不足"><a href="#5-自定义错误类型信息不足" class="headerlink" title="5. 自定义错误类型信息不足"></a>5. 自定义错误类型信息不足</h3><p><strong>问题</strong>：自定义错误类型缺少足够的信息，导致调试困难</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">NetworkError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> requestFailed <span class="comment">// 错误信息不足</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>：为错误类型关联详细信息</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">NetworkError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> requestFailed(statusCode: <span class="type">Int</span>, message: <span class="type">String</span>) <span class="comment">// 关联状态码和错误信息</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">throw</span> <span class="type">NetworkError</span>.requestFailed(statusCode: <span class="number">404</span>, message: <span class="string">&quot;资源未找到&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="十一、高阶用法"><a href="#十一、高阶用法" class="headerlink" title="十一、高阶用法"></a>十一、高阶用法</h2><h3 id="1-高级错误处理模式"><a href="#1-高级错误处理模式" class="headerlink" title="1. 高级错误处理模式"></a>1. 高级错误处理模式</h3><h4 id="1-1-错误转换与包装"><a href="#1-1-错误转换与包装" class="headerlink" title="1.1 错误转换与包装"></a>1.1 错误转换与包装</h4><p>将底层错误转换为更有意义的上层错误：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 底层网络错误</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">InternalNetworkError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> socketError(code: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> dnsResolutionFailed(hostname: <span class="type">String</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上层应用错误</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">AppError</span>: <span class="title class_ inherited__">Error</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> networkError(reason: <span class="type">String</span>, underlyingError: <span class="type">Error</span>?)</span><br><span class="line">    <span class="keyword">case</span> validationError(field: <span class="type">String</span>, message: <span class="type">String</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换错误</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchUserData</span>(<span class="params">userId</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">User</span> &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">try</span> internalFetchUserData(userId: userId)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">InternalNetworkError</span>.socketError(<span class="keyword">let</span> code) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">AppError</span>.networkError(reason: <span class="string">&quot;网络连接失败，错误码：<span class="subst">\(code)</span>&quot;</span>, underlyingError: <span class="literal">nil</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">InternalNetworkError</span>.dnsResolutionFailed(<span class="keyword">let</span> hostname) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">AppError</span>.networkError(reason: <span class="string">&quot;无法解析主机名：<span class="subst">\(hostname)</span>&quot;</span>, underlyingError: <span class="literal">nil</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">AppError</span>.networkError(reason: <span class="string">&quot;网络请求失败&quot;</span>, underlyingError: error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-函数式错误处理"><a href="#1-2-函数式错误处理" class="headerlink" title="1.2 函数式错误处理"></a>1.2 函数式错误处理</h4><p>结合Swift的函数式特性处理错误：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用Result类型封装错误</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchData</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) -&gt; <span class="type">Result</span>&lt;<span class="type">Data</span>, <span class="type">NetworkError</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> url <span class="operator">=</span> <span class="type">URL</span>(string: urlString) <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> .failure(.invalidURL)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 模拟网络请求</span></span><br><span class="line">    <span class="keyword">let</span> success <span class="operator">=</span> <span class="type">Bool</span>.random()</span><br><span class="line">    <span class="keyword">if</span> success &#123;</span><br><span class="line">        <span class="keyword">return</span> .success(<span class="type">Data</span>())</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> .failure(.requestFailed(statusCode: <span class="number">500</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链式调用处理错误</span></span><br><span class="line"><span class="keyword">let</span> result <span class="operator">=</span> fetchData(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">    .map &#123; data <span class="keyword">in</span></span><br><span class="line">        <span class="comment">// 处理数据</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">String</span>(data: data, encoding: .utf8) <span class="operator">??</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    .flatMap &#123; string <span class="keyword">in</span></span><br><span class="line">        <span class="comment">// 进一步处理</span></span><br><span class="line">        <span class="keyword">if</span> string.isEmpty &#123;</span><br><span class="line">            <span class="keyword">return</span> .failure(.unknown)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> .success(string)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理最终结果</span></span><br><span class="line"><span class="keyword">switch</span> result &#123;</span><br><span class="line"><span class="keyword">case</span> .success(<span class="keyword">let</span> data):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .failure(<span class="keyword">let</span> error):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-异步错误处理"><a href="#1-3-异步错误处理" class="headerlink" title="1.3 异步错误处理"></a>1.3 异步错误处理</h4><p>在异步代码中处理错误（Swift 5.5+）：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 异步函数抛出错误</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchDataAsync</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) <span class="keyword">async</span> <span class="keyword">throws</span> -&gt; <span class="type">Data</span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> url <span class="operator">=</span> <span class="type">URL</span>(string: urlString) <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">NetworkError</span>.invalidURL</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> (data, response) <span class="operator">=</span> <span class="keyword">try</span> <span class="keyword">await</span> <span class="type">URLSession</span>.shared.data(from: url)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> httpResponse <span class="operator">=</span> response <span class="keyword">as?</span> <span class="type">HTTPURLResponse</span>, httpResponse.statusCode <span class="operator">==</span> <span class="number">200</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="type">NetworkError</span>.requestFailed(statusCode: (response <span class="keyword">as?</span> <span class="type">HTTPURLResponse</span>)<span class="operator">?</span>.statusCode <span class="operator">??</span> <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用异步函数并处理错误</span></span><br><span class="line"><span class="type">Task</span> &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> <span class="keyword">await</span> fetchDataAsync(from: <span class="string">&quot;https://example.com/data.json&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">### <span class="number">2</span>. 高级错误恢复策略</span><br><span class="line"></span><br><span class="line">#### <span class="number">2.1</span> 智能重试机制</span><br><span class="line"></span><br><span class="line">实现基于错误类型和重试次数的智能重试：</span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">RetryPolicy</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> immediate(maxRetries: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> exponentialBackoff(maxRetries: <span class="type">Int</span>, initialDelay: <span class="type">TimeInterval</span>)</span><br><span class="line">    <span class="keyword">case</span> custom(delay: (<span class="type">Int</span>) -&gt; <span class="type">TimeInterval</span>, maxRetries: <span class="type">Int</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchWithRetry</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>, <span class="params">policy</span>: <span class="type">RetryPolicy</span>) <span class="keyword">async</span> <span class="keyword">throws</span> -&gt; <span class="type">Data</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> retries <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> maxRetries: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> delay: (<span class="type">Int</span>) -&gt; <span class="type">TimeInterval</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 配置重试策略</span></span><br><span class="line">    <span class="keyword">switch</span> policy &#123;</span><br><span class="line">    <span class="keyword">case</span> .immediate(<span class="keyword">let</span> count):</span><br><span class="line">        maxRetries <span class="operator">=</span> count</span><br><span class="line">        delay <span class="operator">=</span> &#123; <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">0</span> &#125;</span><br><span class="line">    <span class="keyword">case</span> .exponentialBackoff(<span class="keyword">let</span> count, <span class="keyword">let</span> initialDelay):</span><br><span class="line">        maxRetries <span class="operator">=</span> count</span><br><span class="line">        delay <span class="operator">=</span> &#123; attempt <span class="keyword">in</span> initialDelay <span class="operator">*</span> pow(<span class="number">2.0</span>, <span class="type">Double</span>(attempt)) &#125;</span><br><span class="line">    <span class="keyword">case</span> .custom(<span class="keyword">let</span> delayFunc, <span class="keyword">let</span> count):</span><br><span class="line">        maxRetries <span class="operator">=</span> count</span><br><span class="line">        delay <span class="operator">=</span> delayFunc</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> &#123;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">try</span> <span class="keyword">await</span> fetchDataAsync(from: urlString)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="type">NetworkError</span>.timeout, <span class="type">NetworkError</span>.requestFailed(<span class="keyword">let</span> statusCode) <span class="keyword">where</span> statusCode <span class="operator">&gt;=</span> <span class="number">500</span> &#123;</span><br><span class="line">            <span class="comment">// 只对特定错误进行重试</span></span><br><span class="line">            retries <span class="operator">+=</span> <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> retries <span class="operator">&gt;</span> maxRetries &#123;</span><br><span class="line">                <span class="keyword">throw</span> error</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 延迟后重试</span></span><br><span class="line">            <span class="keyword">try</span> <span class="keyword">await</span> <span class="type">Task</span>.sleep(nanoseconds: <span class="type">UInt64</span>(delay(retries) <span class="operator">*</span> <span class="number">1_000_000_000</span>))</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="comment">// 其他错误直接抛出</span></span><br><span class="line">            <span class="keyword">throw</span> error</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用智能重试</span></span><br><span class="line"><span class="type">Task</span> &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> <span class="keyword">await</span> fetchWithRetry(</span><br><span class="line">            from: <span class="string">&quot;https://example.com/data.json&quot;</span>,</span><br><span class="line">            policy: .exponentialBackoff(maxRetries: <span class="number">3</span>, initialDelay: <span class="number">1.0</span>)</span><br><span class="line">        )</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取数据成功：<span class="subst">\(data)</span>&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取数据失败：<span class="subst">\(error)</span>&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-错误聚合"><a href="#2-2-错误聚合" class="headerlink" title="2.2 错误聚合"></a>2.2 错误聚合</h4><p>聚合多个错误信息：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误聚合类型</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">AggregateError</span>: <span class="title class_ inherited__">Error</span>, <span class="title class_ inherited__">CustomStringConvertible</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> errors: [<span class="type">Error</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> description: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Multiple errors occurred: <span class="subst">\(errors.map &#123; \<span class="string">&quot;<span class="subst">\(<span class="variable">$0</span>)</span><span class="subst">\&quot;</span> &#125;.joined(separator: &quot;</span>, <span class="string">&quot;))&quot;</span></span></span></span><br><span class="line"><span class="subst"><span class="string">    &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">&#125;</span></span></span><br><span class="line"><span class="subst"><span class="string"></span></span></span><br><span class="line"><span class="subst"><span class="string"><span class="operator">//</span> 并行验证函数</span></span></span><br><span class="line"><span class="subst"><span class="string"><span class="keyword">func</span> validateAllFields(_ fields: [String: String]) <span class="keyword">throws</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="keyword">var</span> errors <span class="operator">=</span> [Error]</span></span></span><br><span class="line"><span class="subst"><span class="string">    </span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="operator">//</span> 验证邮箱</span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="keyword">if</span> <span class="keyword">let</span> email <span class="operator">=</span> fields[<span class="string">&quot;email&quot;</span>] &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">        <span class="keyword">do</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            <span class="keyword">try</span> validateEmail(email)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125; <span class="keyword">catch</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            errors.append(error)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    </span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="operator">//</span> 验证密码</span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="keyword">if</span> <span class="keyword">let</span> password <span class="operator">=</span> fields[<span class="string">&quot;password&quot;</span>] &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">        <span class="keyword">do</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            <span class="keyword">try</span> validatePassword(password)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125; <span class="keyword">catch</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            errors.append(error)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    </span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="operator">//</span> 验证用户名</span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="keyword">if</span> <span class="keyword">let</span> username <span class="operator">=</span> fields[<span class="string">&quot;username&quot;</span>] &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">        <span class="keyword">do</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            <span class="keyword">try</span> validateUsername(username)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125; <span class="keyword">catch</span> &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">            errors.append(error)</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">    </span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="operator">//</span> 如果有错误，抛出聚合错误</span></span></span><br><span class="line"><span class="subst"><span class="string">    <span class="keyword">if</span> <span class="operator">!</span>errors.isEmpty &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">        <span class="keyword">throw</span> AggregateError(errors: errors)</span></span></span><br><span class="line"><span class="subst"><span class="string">    &#125;</span></span></span><br><span class="line"><span class="subst"><span class="string">&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-性能优化策略"><a href="#3-性能优化策略" class="headerlink" title="3. 性能优化策略"></a>3. 性能优化策略</h3><h4 id="3-1-减少错误处理开销"><a href="#3-1-减少错误处理开销" class="headerlink" title="3.1 减少错误处理开销"></a>3.1 减少错误处理开销</h4><p>避免在性能敏感的代码中过度使用错误处理：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 性能敏感的代码，避免使用错误处理</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fastArraySum</span>(<span class="keyword">_</span> <span class="params">numbers</span>: [<span class="type">Int</span>]) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> sum <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</span><br><span class="line">        sum <span class="operator">+=</span> number</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 非性能敏感的代码，可以使用错误处理</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">safeArraySum</span>(<span class="keyword">_</span> <span class="params">numbers</span>: [<span class="type">Int</span>?]) <span class="keyword">throws</span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> sum <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> number <span class="operator">=</span> number <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="type">ValidationError</span>(field: <span class="string">&quot;numbers&quot;</span>, message: <span class="string">&quot;数组包含nil值&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        sum <span class="operator">+=</span> number</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-缓存错误结果"><a href="#3-2-缓存错误结果" class="headerlink" title="3.2 缓存错误结果"></a>3.2 缓存错误结果</h4><p>缓存频繁发生的错误结果，避免重复计算：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ErrorCache</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> cache: [<span class="type">String</span>: <span class="type">Error</span>] <span class="operator">=</span> [:]</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">let</span> lock <span class="operator">=</span> <span class="type">NSLock</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">getError</span>(<span class="params">for</span> <span class="params">key</span>: <span class="type">String</span>) -&gt; <span class="type">Error</span>? &#123;</span><br><span class="line">        lock.lock()</span><br><span class="line">        <span class="keyword">defer</span> &#123; lock.unlock() &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[key]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">setError</span>(<span class="keyword">_</span> <span class="params">error</span>: <span class="type">Error</span>, <span class="params">for</span> <span class="params">key</span>: <span class="type">String</span>) &#123;</span><br><span class="line">        lock.lock()</span><br><span class="line">        <span class="keyword">defer</span> &#123; lock.unlock() &#125;</span><br><span class="line">        cache[key] <span class="operator">=</span> error</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">clear</span>() &#123;</span><br><span class="line">        lock.lock()</span><br><span class="line">        <span class="keyword">defer</span> &#123; lock.unlock() &#125;</span><br><span class="line">        cache.removeAll()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用错误缓存</span></span><br><span class="line"><span class="keyword">let</span> errorCache <span class="operator">=</span> <span class="type">ErrorCache</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fetchDataWithCache</span>(<span class="params">from</span> <span class="params">urlString</span>: <span class="type">String</span>) <span class="keyword">throws</span> -&gt; <span class="type">Data</span> &#123;</span><br><span class="line">    <span class="comment">// 检查缓存</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> cachedError <span class="operator">=</span> errorCache.getError(for: urlString) &#123;</span><br><span class="line">        <span class="keyword">throw</span> cachedError</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">try</span> fetchData(from: urlString)</span><br><span class="line">        <span class="keyword">return</span> data</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="comment">// 缓存错误</span></span><br><span class="line">        errorCache.setError(error, for: urlString)</span><br><span class="line">        <span class="keyword">throw</span> error</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-最佳实践指南"><a href="#4-最佳实践指南" class="headerlink" title="4. 最佳实践指南"></a>4. 最佳实践指南</h3><ol>
+<li><p><strong>错误处理策略</strong>：</p>
+<ul>
+<li>优先使用<code>do-catch</code>进行明确的错误处理</li>
+<li>只有在确定不会出错时才使用<code>try!</code></li>
+<li>适当使用<code>try?</code>简化代码，但不要忽略错误</li>
+</ul>
+</li>
+<li><p><strong>自定义错误类型</strong>：</p>
+<ul>
+<li>为不同的错误场景创建不同的错误类型</li>
+<li>为错误类型关联足够的调试信息</li>
+<li>实现<code>CustomStringConvertible</code>或<code>LocalizedError</code>协议，提供友好的错误描述</li>
+</ul>
+</li>
+<li><p><strong>资源管理</strong>：</p>
+<ul>
+<li>始终使用<code>defer</code>语句清理资源（文件、网络连接等）</li>
+<li>确保<code>defer</code>语句的执行顺序正确</li>
+</ul>
+</li>
+<li><p><strong>性能考量</strong>：</p>
+<ul>
+<li>避免在性能敏感的代码中过度使用错误处理</li>
+<li>考虑使用<code>Result</code>类型进行异步错误处理</li>
+<li>缓存频繁发生的错误结果</li>
+</ul>
+</li>
+<li><p><strong>测试与调试</strong>：</p>
+<ul>
+<li>编写单元测试覆盖各种错误场景</li>
+<li>使用断言验证错误处理逻辑</li>
+<li>在开发环境中提供详细的错误信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="十二、实践练习"><a href="#十二、实践练习" class="headerlink" title="十二、实践练习"></a>十二、实践练习</h2><h3 id="1-错误表示与处理基础练习"><a href="#1-错误表示与处理基础练习" class="headerlink" title="1. 错误表示与处理基础练习"></a>1. 错误表示与处理基础练习</h3><h4 id="1-1-创建自定义错误类型"><a href="#1-1-创建自定义错误类型" class="headerlink" title="1.1 创建自定义错误类型"></a>1.1 创建自定义错误类型</h4><p>创建一个表示网络错误的枚举<code>NetworkError</code>，包含以下错误情况：</p>
+<ul>
+<li><code>invalidURL</code>：URL格式错误</li>
+<li><code>requestFailed(statusCode: Int)</code>：请求失败，包含HTTP状态码</li>
+<li><code>timeout</code>：请求超时</li>
+<li><code>unknown(error: Error)</code>：未知错误，包含原始错误信息</li>
+</ul>
+<p>确保该枚举遵循<code>Error</code>协议和<code>LocalizedError</code>协议，提供友好的错误描述。</p>
+<h4 id="1-2-实现带错误处理的函数"><a href="#1-2-实现带错误处理的函数" class="headerlink" title="1.2 实现带错误处理的函数"></a>1.2 实现带错误处理的函数</h4><p>创建一个函数<code>fetchData(from urlString: String) throws -&gt; String</code>，该函数：</p>
+<ol>
+<li>检查URL格式是否有效，如果无效则抛出<code>NetworkError.invalidURL</code></li>
+<li>模拟网络请求，如果请求耗时超过2秒则抛出<code>NetworkError.timeout</code></li>
+<li>模拟不同的HTTP状态码，如果状态码不是200则抛出<code>NetworkError.requestFailed</code></li>
+<li>如果请求成功，返回模拟的响应数据</li>
+</ol>
+<h3 id="2-高级错误处理练习"><a href="#2-高级错误处理练习" class="headerlink" title="2. 高级错误处理练习"></a>2. 高级错误处理练习</h3><h4 id="2-1-实现重试机制"><a href="#2-1-实现重试机制" class="headerlink" title="2.1 实现重试机制"></a>2.1 实现重试机制</h4><p>基于上面的<code>fetchData</code>函数，创建一个新函数<code>fetchDataWithRetry(from urlString: String, maxRetries: Int) throws -&gt; String</code>，该函数：</p>
+<ol>
+<li>尝试调用<code>fetchData</code>函数获取数据</li>
+<li>如果遇到<code>NetworkError.timeout</code>或<code>NetworkError.requestFailed</code>（状态码为500-599），则自动重试，最多重试<code>maxRetries</code>次</li>
+<li>如果重试次数用完仍失败，则抛出最后一次遇到的错误</li>
+<li>使用<code>defer</code>语句记录请求的开始和结束时间</li>
+</ol>
+<h4 id="2-2-使用Result类型处理异步操作"><a href="#2-2-使用Result类型处理异步操作" class="headerlink" title="2.2 使用Result类型处理异步操作"></a>2.2 使用Result类型处理异步操作</h4><p>创建一个模拟异步网络请求的函数<code>fetchDataAsync(from urlString: String, completion: @escaping (Result&lt;String, NetworkError&gt;) -&gt; Void)</code>，该函数：</p>
+<ol>
+<li>使用GCD或<code>DispatchQueue</code>模拟异步网络请求</li>
+<li>根据不同情况返回成功或失败的结果</li>
+<li>在主线程中调用完成闭包</li>
+</ol>
+<p>然后编写代码调用该函数，并处理成功和失败的情况。</p>
+<h3 id="3-综合应用练习"><a href="#3-综合应用练习" class="headerlink" title="3. 综合应用练习"></a>3. 综合应用练习</h3><h4 id="3-1-实现文件操作错误处理"><a href="#3-1-实现文件操作错误处理" class="headerlink" title="3.1 实现文件操作错误处理"></a>3.1 实现文件操作错误处理</h4><p>创建一个<code>FileManager</code>的扩展，添加以下方法：</p>
+<ol>
+<li><code>readText(from fileURL: URL) throws -&gt; String</code>：读取文件内容，处理文件不存在、没有权限、文件内容不是文本等错误</li>
+<li><code>writeText(_ text: String, to fileURL: URL) throws -&gt; Void</code>：写入文件内容，处理文件不能创建、没有权限等错误</li>
+<li><code>copyFile(from sourceURL: URL, to destinationURL: URL) throws -&gt; Void</code>：复制文件，处理源文件不存在、目标位置不能写入等错误</li>
+</ol>
+<p>确保所有方法都正确处理错误，并提供清晰的错误信息。</p>
+<h4 id="3-2-实现错误转换与包装"><a href="#3-2-实现错误转换与包装" class="headerlink" title="3.2 实现错误转换与包装"></a>3.2 实现错误转换与包装</h4><p>创建一个函数<code>loadConfiguration(from fileURL: URL) throws -&gt; [String: Any]</code>，该函数：</p>
+<ol>
+<li>调用上面的<code>readText</code>方法读取文件内容</li>
+<li>将文本内容解析为JSON</li>
+<li>如果解析失败，将JSON解析错误包装为自定义的<code>ConfigurationError.parsingFailed</code>错误</li>
+<li>如果JSON不是字典类型，抛出<code>ConfigurationError.invalidFormat</code>错误</li>
+</ol>
+<p>创建自定义的<code>ConfigurationError</code>枚举，包含<code>fileNotFound</code>、<code>parsingFailed</code>和<code>invalidFormat</code>等错误情况。</p>
+<h2 id="十三、总结"><a href="#十三、总结" class="headerlink" title="十三、总结"></a>十三、总结</h2><p>在这篇学习日记中，我们深入探讨了Swift的错误处理机制：</p>
+<ol>
+<li><p><strong>基本概念</strong>：错误是指在程序运行时可能出现的异常情况，Swift的错误处理机制允许我们表示、抛出、捕获、传播和恢复错误</p>
+</li>
+<li><p><strong>表示错误</strong>：使用遵循<code>Error</code>协议的类型（通常是枚举）来表示错误</p>
+</li>
+<li><p><strong>抛出错误</strong>：使用<code>throw</code>关键字抛出错误，只有在标记为<code>throws</code>的函数、方法或初始化器中才能抛出错误</p>
+</li>
+<li><p><strong>捕获错误</strong>：使用<code>do-catch</code>语句捕获和处理错误，可以捕获特定类型的错误或所有错误</p>
+</li>
+<li><p><strong>传播错误</strong>：将错误从一个函数传播到另一个函数，让调用者来处理</p>
+</li>
+<li><p><strong>高级用法</strong>：</p>
+<ul>
+<li><code>try?</code>和<code>try!</code>：简化的错误处理方式</li>
+<li><code>defer</code>语句：延迟执行代码，用于资源清理</li>
+<li><code>rethrows</code>关键字：重新抛出闭包中的错误</li>
+<li>自定义错误处理：例如重试机制、错误转换等</li>
+</ul>
+</li>
+<li><p><strong>错误恢复</strong>：在处理错误后，尝试恢复程序的正常执行，例如使用默认值、回退到备选方案等</p>
+</li>
+</ol>
+<p>错误处理是Swift编程中的重要组成部分，它使得我们的代码更加健壮和可靠。掌握错误处理机制对于开发高质量的Swift应用程序至关重要。在下一篇学习日记中，我们将继续学习Swift的内存管理机制。</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/ios.github.io/2025/12/14/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>swift学习日记(九)</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/ios.github.io/2025/12/10/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/">
+        <span>swift学习日记(七)</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/ios.github.io/2025/12/12/swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Swift%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Swift学习日记（八）：错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">一、引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text">二、错误处理的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%A1%A8%E7%A4%BA%E9%94%99%E8%AF%AF"><span class="toc-number">1.3.</span> <span class="toc-text">三、表示错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E9%94%99%E8%AF%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 使用枚举表示错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E7%BB%93%E6%9E%84%E4%BD%93%E8%A1%A8%E7%A4%BA%E9%94%99%E8%AF%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 使用结构体表示错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF"><span class="toc-number">1.4.</span> <span class="toc-text">四、抛出错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 抛出错误的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 抛出错误的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 抛出错误的初始化器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8D%95%E8%8E%B7%E9%94%99%E8%AF%AF"><span class="toc-number">1.5.</span> <span class="toc-text">五、捕获错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%9A%84do-catch%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 基本的do-catch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8D%95%E8%8E%B7%E7%89%B9%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 捕获特定类型的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8D%95%E8%8E%B7%E6%89%80%E6%9C%89%E9%94%99%E8%AF%AF"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 捕获所有错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BC%A0%E6%92%AD%E9%94%99%E8%AF%AF"><span class="toc-number">1.6.</span> <span class="toc-text">六、传播错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BC%A0%E6%92%AD%E9%94%99%E8%AF%AF%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 传播错误的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BC%A0%E6%92%AD%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 传播错误的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">七、错误处理的高级用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-try-%E5%92%8Ctry"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. try?和try!</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#try"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">try?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#try-1"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">try!</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-defer%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. defer语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%87%8D%E6%96%B0%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 重新抛出错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.7.4.</span> <span class="toc-text">4. 自定义错误处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">1.8.</span> <span class="toc-text">八、错误恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. 使用默认值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%9E%E9%80%80%E5%88%B0%E5%A4%87%E9%80%89%E6%96%B9%E6%A1%88"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. 回退到备选方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%86%85%E5%AE%B9%E6%9C%BA%E5%88%B6%E4%B8%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">九、内容机制与知识点总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Swift%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">1.9.1.</span> <span class="toc-text">1. Swift错误处理的设计原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.2.</span> <span class="toc-text">2. 核心知识点总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.10.</span> <span class="toc-text">十、遇到的问题及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%87%E5%BA%A6%E4%BD%BF%E7%94%A8try-%E5%AF%BC%E8%87%B4%E5%B4%A9%E6%BA%83"><span class="toc-number">1.10.1.</span> <span class="toc-text">1. 过度使用try!导致崩溃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E4%BB%A3%E7%A0%81%E5%B5%8C%E5%A5%97%E8%BF%87%E6%B7%B1"><span class="toc-number">1.10.2.</span> <span class="toc-text">2. 错误处理代码嵌套过深</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BF%BD%E7%95%A5%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.10.3.</span> <span class="toc-text">3. 忽略错误处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-defer%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98"><span class="toc-number">1.10.4.</span> <span class="toc-text">4. defer语句的执行顺序问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF%E4%B8%8D%E8%B6%B3"><span class="toc-number">1.10.5.</span> <span class="toc-text">5. 自定义错误类型信息不足</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E9%AB%98%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-number">1.11.</span> <span class="toc-text">十一、高阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%AB%98%E7%BA%A7%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.11.1.</span> <span class="toc-text">1. 高级错误处理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E9%94%99%E8%AF%AF%E8%BD%AC%E6%8D%A2%E4%B8%8E%E5%8C%85%E8%A3%85"><span class="toc-number">1.11.1.1.</span> <span class="toc-text">1.1 错误转换与包装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%87%BD%E6%95%B0%E5%BC%8F%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.11.1.2.</span> <span class="toc-text">1.2 函数式错误处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%BC%82%E6%AD%A5%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.11.1.3.</span> <span class="toc-text">1.3 异步错误处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E9%94%99%E8%AF%AF%E8%81%9A%E5%90%88"><span class="toc-number">1.11.1.4.</span> <span class="toc-text">2.2 错误聚合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="toc-number">1.11.2.</span> <span class="toc-text">3. 性能优化策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%87%8F%E5%B0%91%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%BC%80%E9%94%80"><span class="toc-number">1.11.2.1.</span> <span class="toc-text">3.1 减少错误处理开销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%BC%93%E5%AD%98%E9%94%99%E8%AF%AF%E7%BB%93%E6%9E%9C"><span class="toc-number">1.11.2.2.</span> <span class="toc-text">3.2 缓存错误结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97"><span class="toc-number">1.11.3.</span> <span class="toc-text">4. 最佳实践指南</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%AE%9E%E8%B7%B5%E7%BB%83%E4%B9%A0"><span class="toc-number">1.12.</span> <span class="toc-text">十二、实践练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%94%99%E8%AF%AF%E8%A1%A8%E7%A4%BA%E4%B8%8E%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0"><span class="toc-number">1.12.1.</span> <span class="toc-text">1. 错误表示与处理基础练习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.12.1.1.</span> <span class="toc-text">1.1 创建自定义错误类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%AE%9E%E7%8E%B0%E5%B8%A6%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.12.1.2.</span> <span class="toc-text">1.2 实现带错误处理的函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%AB%98%E7%BA%A7%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%BB%83%E4%B9%A0"><span class="toc-number">1.12.2.</span> <span class="toc-text">2. 高级错误处理练习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%AF%95%E6%9C%BA%E5%88%B6"><span class="toc-number">1.12.2.1.</span> <span class="toc-text">2.1 实现重试机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E4%BD%BF%E7%94%A8Result%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.12.2.2.</span> <span class="toc-text">2.2 使用Result类型处理异步操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8%E7%BB%83%E4%B9%A0"><span class="toc-number">1.12.3.</span> <span class="toc-text">3. 综合应用练习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">1.12.3.1.</span> <span class="toc-text">3.1 实现文件操作错误处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%AE%9E%E7%8E%B0%E9%94%99%E8%AF%AF%E8%BD%AC%E6%8D%A2%E4%B8%8E%E5%8C%85%E8%A3%85"><span class="toc-number">1.12.3.2.</span> <span class="toc-text">3.2 实现错误转换与包装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.13.</span> <span class="toc-text">十三、总结</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2025 - 2025 
+        
+        猪会飞
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <span>Theme: <a href="https://github.com/kb1000fx/hexo-theme-meadow" rel="noopener" target="_blank">Meadow</a></span>
+      
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/ios.github.io/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/ios.github.io/js/meadow.js"></script>
+
+</body>
+</html >
